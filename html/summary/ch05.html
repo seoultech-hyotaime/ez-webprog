@@ -1,0 +1,128 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <title>ch05</title>
+</head>
+<body>
+<article>
+    <header><h1 class="page-title">ch05</h1>
+        <p class="page-description"></p></header>
+    <div class="page-body"><h1 class="">CSS의 고급 기능</h1>
+        <h2 class="">레이아웃 만들기</h2>
+        <h3 class="">박스 제어하기</h3>
+        <h3>레이아웃의 이해</h3>
+        <p>인라인 태그와 블록 태그</p>
+        <table border="1px">
+            <thead>
+            <tr>
+                <td>인라인 태그</td>
+                <td>블록 태그</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;i&gt;</code>, <code>&lt;b&gt;</code>,
+                    <code>&lt;mark&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;br&gt;</code>,
+                    <code>&lt;input&gt;</code>,
+                    <code>&lt;select&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;button&gt;</code></td>
+                <td><code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;ul&gt;</code>,
+                    <code>&lt;li&gt;</code>,
+                    <code>&lt;hr&gt;</code>, <code>&lt;div&gt;</code>, <code>&lt;table&gt;</code>,
+                    <code>&lt;form&gt;</code></td>
+            </tr>
+            </tbody>
+        </table>
+        <p>인라인 태그와 블록 태그의 한계</p>
+        <ul>
+            <li>&lt;section&gt;이나 &lt;aside&gt; 영역을 옆으로 나란히 배치하려면?</li>
+            <li>사용자의 모니터 해상도가 내 것과 다르면?</li>
+        </ul>
+        <p>인라인-블록 태그<br/></p>
+        <h4>박스 표시 관련 CSS 속성</h4>
+        <ul>
+            <li>화면에 나타내기<br/>
+                <code>visibilityhidden</code>은 공간 차지<br/><br/><code>none</code>은 공간 차지 X<br/>
+            </li>
+            <li>투명하게 지정하기 <code>opacity</code><br/>0은 투명<br/></li>
+        </ul>
+        <h3>태그 위치를 지정하는 CSS 속성</h3>
+        <h4>위치를 지정하는 속성<code>position</code></h4>
+        <ul>
+            <li><code>static</code>: 기본 위치</li>
+            <li><code>relatvie</code>: 기본 위치를 기본으로 하는 상대 위치</li>
+            <li><code>absolute</code>: 조상 태그의 시작 위치를 기준으로 하는 절대적 위치</li>
+            <li><code>fixed</code>: 화면을 스크롤해도 움직이지 않는 고정적 위치</li>
+        </ul>
+        <h4>감싸면서 배치하는 속성<code>float</code></h4>
+        <ul>
+            <li><code>none</code>: 그림과 문자를 한 줄에 배치</li>
+            <li><code>left</code>: 그림을 왼쪽에 배치하고 글자가 나머지 영역을 감싸도록 배치</li>
+            <li><code>right</code>: 그림을 오른쪽에 배치하고 글자가 나머지 영역을 감싸도록 배치</li>
+        </ul>
+        <h4>유연하게 정렬하는 속성 <code>flex</code></h4>
+        <ul>
+            <li><code>none</code>: 박스 크기를 조절하지 않음</li>
+            <li><code>auto</code>: 자동으로 박스 크기를 조절함</li>
+            <li>단위가 없는 양수: 전체에서 해당 태그가 차지하는 공간의 비율</li>
+        </ul>
+        예제<code>ex5-9.html</code> 참고<br/>첫 번째 박스의 폭을 <br/><code>width</code>로 지정하고 두 번째를 <code>flex: 1</code>로 지정하면 컨테이너의 남은 폭을 알아서 채워줌.
+        <h4>앞뒤로 배치하는 속성<code>z-index</code></h4>
+        <code>z-index</code>가 클수록 앞으로 튀어나옴
+        <h4>박스를 벗어난 영역을 처리하는 속성 <code>overflow</code></h4>
+        <ul>
+            <li><code>visible</code>: 박스를 벗어나는 내용까지 보여줌</li>
+            <li><code>hidden</code>: 박스를 벗어나는 내용은 숨김</li>
+            <li><code>scroll</code>: 위아래, 양옆 스크롤바를 생성</li>
+            <li><code>auto</code>: 박스를 벗어나는 방향의 스크롤바만 자동으로 생성</li>
+        </ul>
+        <h2>태그 꾸미기</h2>
+        <h3>리스트 꾸미기</h3>
+        <p>list관련 CSS 속성</p>
+        <ul>
+            <li><code>list-style-type</code></li>
+            <li><code>list-style-image</code></li>
+            <li><code>list-style-position</code></li>
+            <li><code>list-style</code></li>
+        </ul>
+        <h3>테이블 꾸미기</h3>
+        <code>ex5-13.html</code>
+        <h3>웹 폼 꾸미기</h3>
+        <code>ex5-14.html</code>
+        <h2>시각적 효과</h2>
+        <h3>그림자</h3>
+        <h4>문자 그림자<code><strong>text-shadow</strong></code></h4>
+        <ul>
+            <li><code>Horizontal-offset</code>: 문자의 오른쪽으로 이동하는 정도, 생략 불가능</li>
+            <li><code>Vertical-offset</code>: 문자의 아래쪽으로 이동하는 정도, 생략 불가능</li>
+            <li><code>Blur-Radius</code>: 그림자가 흐린 정도, 생략 가능</li>
+            <li><code>Shadow-Color</code>: 그림자 색상, 생략 가능</li>
+        </ul>
+        <h4>박스 그림자<code><strong>box-shadow</strong></code></h4>
+        <h3>움직임 만들기</h3>
+        <h4>상태를 천천히 변화시키는 속성 <code>transition</code></h4>
+        <code>ex5-17.html</code>
+        <h4>애니메이션을 만드는 속성 <code>animation</code>과 <code>@keyframes</code></h4>
+        <code>animation</code> 속성값
+        <ul>
+            <li><code>{숫자}s</code>: 애니메이션을 완료하는데 걸리는 시간</li>
+            <li><code>{숫자}</code>: 반복 횟수</li>
+            <li><code>infinity</code>: 무한 반복</li>
+            <li><code>linear</code>: 일정하게 움직임</li>
+            <li><code>alternate</code>: 불규칙적으로 움직임</li>
+        </ul>
+        <h4>모양을 변경하는 속성 <code>transform</code></h4>
+        <ul>
+            <li><code>translate</code>: 이동, px</li>
+            <li><code>scale</code>: n배 크기, 숫자</li>
+            <li><code>rotate</code>: 회전, deg</li>
+            <li><code>skew</code>: 기울임, deg</li>
+            <li><code>perspective</code>: 입체(다른 효과와 함께 사용), px</li>
+        </ul>
+        <h3>커서 모양 바꾸기</h3>
+        <code>cursor</code> 속성 사용</p>
+    </div>
+</article>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <title>ch11</title>
+</head>
+<body>
+<article>
+    <header><h1 class="page-title">ch11</h1>
+        <p class="page-description"></p></header>
+    <div class="page-body"><h1>캔버스로 그림 그리기</h1>
+        <h2>캔버스 기본 기능</h2>
+        <h3><code>&lt;canvas&gt;</code> 태그 사용하기</h3>
+        <h3>문서에 캔버스 추가하기</h3>
+        <pre><code class="language-html">&lt;canvas id=&quot;myCanvas&quot; width=&quot;600&quot; height=&quot;400&quot;&gt;&lt;/canvas&gt;</code></pre>
+        <pre class="code"><code class="language-JavaScript"
+        >const canvas = document.getElementById(&quot;myCanvas&quot;);const ctx = canvas.getContext(&quot;2d&quot;);</code></pre>
+        <ul>
+            <li>책을 채운 도형 그리기</li>
+        </ul>
+        <pre class="code"><code class="language-JavaScript"
+        >ctx.fillStyle = &quot;blue&quot;; // 사각형의 안쪽 색상ctx.fillRect(20, 20, 50, 50) // (X, Y, width, height)</code></pre>
+        <ul>
+            <li>테두리만 있는 도형 그리기</li>
+        </ul>
+        <pre class="code"><code class="language-JavaScript"
+        >ctx.strokeStyle = &quot;red&quot;; // 사각형의 테두리 색상ctx.strokeRect(20, 20, 50, 50); // 테두리만 있는 사각형</code></pre>
+        <ul>
+            <li>그래픽 지우기</li>
+        </ul>
+        <pre class="code"><code class="language-JavaScript"
+        >ctx.clearRect(0, 0, canvas.width, canvas.height) // 화면 전체 지우기requestAnimationFrame(draw) // draw함수를 작동 시키기</code></pre>
+        <h3>캔버스로 2차원 그래픽 구현하기</h3>
+        <blockquote>예제 11-1</blockquote>
+        <h3>도형 그리기</h3>
+        <h3>경로를 사용하여 그리기</h3>
+        <ul>
+            <li>경로 그리기</li>
+        </ul>
+        <pre class="code"><code class="language-JavaScript"
+        >const canvas = document.getElementById(&quot;myCanvas&quot;);const ctx = canvas.getContext(&quot;2d&quot;);ctx.beginPath(); // 경로를 시작ctx.moveTo(50, 50); // 선을 그리지 않고 이동ctx.lineTo(100, 50); // 선을 그리며 이동ctx.lineTo(100, 100);ctx.lineTo(50, 100)
+ctx.closePath(); // 경로를 닫음. 종료점과 시작점을 연결</code></pre>
+        <ul>
+            <li>경로를 따라 사각형 그리기<br/>&gt; 예제 11-2<br/></li>
+        </ul>
+        <ul>
+            <li>경로를 따라 곡선 그리기<br/>&gt; 예제 11-3<br/></li>
+        </ul>
+        <h3>다각형 그리기</h3>
+        <blockquote>예제 11-4</blockquote>
+        <h3>호와 원 그리기</h3>
+        <p><code>arc(x, y, 반지름, 시작 각도, 종료 각도)</code><br/>&gt; 예제 11-5<br/>-
+            원 그리기<br/>&gt; 예제 11-6<br/></p>
+        <h3>곡선 그리기</h3>
+        <pre class="code"><code class="language-JavaScript"
+        >moveTo(시작점x, 시작점y)
+quadraticCurveTo(제어점x, 제어점y, 종료점x, 종료점y)</code></pre>
+        <blockquote>예제 11-7</blockquote>
+        <h3>문자와 이미지 그리기</h3>
+        <h3>문자 그리기</h3>
+        <pre class="code"><code class="language-JavaScript">ctx.font = &quot;18px Gothic&quot;; // 폰트 지정ctx.fillStyle = &quot;blue&quot;;ctx.fillText(&quot;캔버스&quot;, x, y); // x, y에 캔버스 문자가 나타남</code></pre>
+        <blockquote>예제 11-8</blockquote>
+        <h3>이미지 그리기</h3>
+        <pre class="code"><code class="language-JavaScript">const airplane = new Image(); // Image 객체 생성airplane.src = &quot;../media/airplane.png&quot;; // Image 소스 지정ctx.drawImage(airplane, x, y, width, height) // (x, y)에 이미지 그리기</code></pre>
+        <blockquote>예제 11-9</blockquote>
+        <h2>캔버스 고급 기능과 애니메이션</h2>
+        <h3>캔버스 속성</h3>
+        <h3>색상 지정하기</h3>
+        <pre class="code"><code class="language-JavaScript">ctx.fillStyle = &quot;#ffea6d&quot;; // 채움 색 지정ctx.strokeStyle = &quot;rgba(99, 46, 45, 0.7)&quot;; // 테두리 선 색 지정</code></pre>
+        <blockquote>예제 11-10</blockquote>
+        <h3>선 굵기 지정하기</h3>
+        <pre class="code"><code class="language-JavaScript">ctx.lineWidth = 5; // 선의 두께 5px로 지정</code></pre>
+        <blockquote>예제 11-11</blockquote>
+        <h3>그레이디언트 만들기</h3>
+        <ul>
+            <li>선형 그레이디언트<br/><br/><code>createLinearGradient(x1, y1, x2, y2)</code><br/>&gt;
+                예제 11-12<br/></li>
+        </ul>
+        <ul>
+            <li>원형 그레이디언트<br/><br/><code>createRadialGradient(x1, y1, r1, x2, y2,
+                r2)</code>
+                <p><code>addColorStop(offset, 색상)</code>: 시작 위치 또는 종료
+                    위치의 색 지정<br/>&gt; 예제 11-13<br/></p></li>
+        </ul>
+        <h3>그림자 만들기</h3>
+        <ul>
+            <li><code>ctx.shadowOffsetX</code></li>
+        </ul>
+        <ul>
+            <li><code>ctx.shadowOffsetY</code></li>
+        </ul>
+        <ul>
+            <li><code>ctx.shadowBlur</code>: 그림자의 번짐 정도</li>
+        </ul>
+        <ul>
+            <li><code>ctx.shadowColor</code>: 그림자 색상<br/>&gt; 예제 11-14<br/></li>
+        </ul>
+        <h3>애니메이션</h3>
+        <h3>물방울 애니메이션</h3>
+        <blockquote>예제 11-15</blockquote>
+        <h3>프렉탈</h3>
+        <ul>
+            <li>재귀적 호출 (recursvie)<br/>&gt; 예제 11-16<br/></li>
+        </ul>
+    </div>
+</article>
+</body>
+</html>

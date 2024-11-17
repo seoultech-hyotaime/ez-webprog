@@ -1,0 +1,103 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <title>ch10</title>
+</head>
+<body>
+<article>
+    <header><h1 class="page-title">ch10</h1>
+        <p class="page-description"></p></header>
+    <div class="page-body"><h1>브라우저 객체 모델과 반응형 웹</h1>
+        <h2>브라우저 객체 모델 다루기</h2>
+        <h3>브라우저 객체 모델</h3>
+        <p>BOM(Browser Object Model): 웹 브라우저가 기본으로 제공하는 객체 모델</p>
+        <ul>
+            <li>document</li>
+            <li>navigator</li>
+            <li>screen</li>
+            <li>history</li>
+            <li>location</li>
+            <li>frames</li>
+            <li>window</li>
+        </ul>
+        <h3>window 객체 사용하기</h3>
+        <h3>윈도우 열고 닫기</h3>
+        <ul>
+            <li>윈도우 열기 <code>open()</code></li>
+        </ul>
+        <pre class="code"><code class="language-JavaScript">window.open(URL, Name, Feature)</code></pre>
+        <p>웹 페이지 표시 위치 지정 Name 값<br/>- <br/><code>_self</code>: 현재
+            창에서 보여줌<br/>- <br/><code>_blank</code>: 새 창에서 보여줌<br/>- <br/><code>_parent</code>: 부모 창에서 보여줌. 부모 창이 없으면
+            <code>_self</code>와 동일<br/>- <br/><code>_top</code>: 최상단에서 보여줌. 최상단이 없으면 <code>_self</code>와 동일</p>
+        <p>window 객체 속성 지정 Feature 값<br/>- width<br/>- height<br/>-
+            left<br/>- top<br/>- resizable<br/>- location<br/>- scrollbars<br/>- status<br/>- toolbar<br/></p>
+        <pre class="code"><code class="language-JavaScript">nw = window.open(&quot;&quot;, &quot;_blank&quot;, &quot;width=700, height=400, left=10, top=10&quot;);nw = open(&quot;&quot;, &quot;_blank&quot;, &quot;width=700, height=400, left=10, top=10&quot;);nw.document.write(&quot;&lt;h2&gt;여기는 새 창&lt;/h2&gt;&quot;)</code></pre>
+        <blockquote>예제 10-1</blockquote>
+        <h2>반응형 웹 만들기</h2>
+        <h3>반응형 웹</h3>
+        <ul>
+            <li>landscape &amp; portrait</li>
+            <li>반응형 웹 디자인</li>
+            <li>뷰포트(viewport)</li>
+        </ul>
+        <pre class="code"><code class="language-HTML">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</code></pre>
+        <h3>반응형 웹 페이지와 미디어 쿼리</h3>
+        <ul>
+            <li>viewport</li>
+        </ul>
+        <pre class="code"><code class="language-CSS">@media screen and (orientation: portrait) {
+  body {font-size: 12px;}
+}</code></pre>
+        <p>@media 표현식의 속성<br/>- width<br/>- height<br/>- device-width<br/>-
+            device-height<br/>- orientation<br/></p>
+        <ul>
+            <li><code>@media (width: 700px)</code>: 폭이 700px일 때</li>
+            <li><code>@media (min-width: 700px)</code>: 폭이 700px보다 클 때</li>
+            <li><code>@media (max-width: 700px)</code>: 폭이 700px보다 작을 때</li>
+            <li><code>@media (min-width: 700px) and (max-width: 900px)</code>: 폭이 700보다 크고
+                900보다 작을 때
+            </li>
+        </ul>
+        <blockquote>예제 10-13</blockquote>
+        <h3>뷰포트 단위</h3>
+        <ul>
+            <li>vw: 뷰포트 폭의 1/100</li>
+            <li>vh: 뷰포트 높이의 1/100</li>
+            <li>vmax: vw, vh 중 큰 값</li>
+            <li>vmin: vw, vh 중 작은 값</li>
+        </ul>
+        <blockquote>예제 10-14</blockquote>
+        <h3>flex 레이아웃</h3>
+        <ul>
+            <li>flex-direction: flex 아이템의 배치 방향을 지정</li>
+            <li>justify-content: 메인 축을 따라 flex 아이템을 정렬</li>
+            <li>align-items: 교차 축을 따라 flex 아이템을 정렬</li>
+        </ul>
+        <h3>가로 레이아웃</h3>
+        <blockquote>예제 10-15</blockquote>
+        <h3>세로 레이아웃</h3>
+        <blockquote>예제 10-16</blockquote>
+        <h3>grid 레이아웃</h3>
+        <pre class="code"><code class="language-CSS">.container {
+  display: grid;  grid-template-columns: 150px 150px 150px; // 3개의 열을 가진 grid 생성  grid-template-rows: 50px 50px; // 2개의 행을 가진 grid 생성}</code></pre>
+        <blockquote>예제 10-17</blockquote>
+        <h3>grid 레이아웃의 단위</h3>
+        <pre class="code"><code class="language-CSS">.container {
+  display: grid;  grid-template-columns: 1fr 2fr 1fr;  grid-template-rows: 1fr 3fr;  gap: 10px;}</code></pre>
+        <blockquote>예제 10-18</blockquote>
+        <h3>박스에 이름을 붙인 grid 레이아웃</h3>
+        <pre class="code"><code class="language-CSS">.container {
+  display: grid;  grid-template-columns: 1fr 1fr 1fr;  grid-template-rows: auto;  gap: 10px;  grid-template-areas:    &quot;header header header&quot;    &quot;main main sidebar&quot;;}</code></pre>
+        <blockquote>예제 10-19</blockquote>
+        <h3>@media와 반응형 grid</h3>
+        <pre class="code"><code class="language-CSS">@media (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr;    grid-template-areas:      &quot;header&quot;      &quot;main&quot;      &quot;sidebar&quot;;  }
+}</code></pre>
+        <blockquote>예제 10-20</blockquote>
+    </div>
+</article>
+</body>
+</html>

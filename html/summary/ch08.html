@@ -1,0 +1,196 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>ch08</title>
+</head>
+<body>
+<article>
+    <header><h1 class="page-title">ch08</h1>
+        <p class="page-description"></p></header>
+    <div class="page-body"><h1>문서 객체 모델</h1>
+        <h2>문서 객체 모델 이해하기</h2>
+        <h3>문서 객체 모델</h3>
+        <p>DOM: Document Object Model</p>
+        <p>BOM: Browser Object Model</p>
+        <p>- window<br/>- document<br/>- history<br/>- location<br/>-
+            navigator<br/>- screen<br/></p>
+        <h3>웹 시스템 관련 객체</h3>
+        <ul>
+            <li>Array, String, Math, Date 객체</li>
+        </ul>
+        <ul>
+            <li>문서 객체모델의 객체</li>
+        </ul>
+        <ul>
+            <li>브라우저 객체모델의 객체</li>
+        </ul>
+        <ul>
+            <li>이벤트 객체</li>
+        </ul>
+        <h3>공통 CSS 파일</h3>
+        <ul>
+            <li>이 장에서 사용하는 외부 CSS 파일 <code>style_js.css</code></li>
+        </ul>
+        <h2>DOM 객체 다루기</h2>
+        <h3>HTML 요소에 접근하기</h3>
+        <h3>요소 하나에 접근하기</h3>
+        <ul>
+            <li><code>document.getElementById(&quot;id&quot;)</code></li>
+        </ul>
+        <h3>요소 여러 개에 접근하기</h3>
+        <ul>
+            <li><code>document.getElementsByClass(&quot;class&quot;)</code></li>
+        </ul>
+        <ul>
+            <li><code>document.getElementsByTagName(&quot;tag&quot;)</code></li>
+        </ul>
+        <ul>
+            <li><code>document.getElementsByName(&quot;name&quot;)</code></li>
+        </ul>
+        <h3>태그 선택자로 요소에 접근하기</h3>
+        <ul>
+            <li><code>document.querySelectorAll(&quot;s&quot;)</code>: s 태그 선택자를 사용하여 요소에 접
+            </li>
+        </ul>
+        <ul>
+            <li>#a -&gt; id a</li>
+        </ul>
+        <ul>
+            <li>.b - class b</li>
+        </ul>
+        <ul>
+            <li>c -&gt; tag c</li>
+        </ul>
+        <h3>HTML 요소에서 값 가져오기</h3>
+        <h3>웹 폼 태그의 문자열 읽기</h3>
+        <p>input 태그의 값 읽기</p>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+                integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
+                crossorigin="anonymous" referrerPolicy="no-referrer"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+              integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
+              crossorigin="anonymous" referrerPolicy="no-referrer"/>
+        <pre class="code"><code class="language-JavaScript"
+                                                                          style="white-space:pre-wrap;word-break:break-all">const id1 = document.myform.userId;alert(`${id1.value}님 환영합니다`)</code></pre>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+                integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
+                crossorigin="anonymous" referrerPolicy="no-referrer"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+              integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
+              crossorigin="anonymous" referrerPolicy="no-referrer"/>
+        <pre class="code"><code class="language-JavaScript"
+                                                                          style="white-space:pre-wrap;word-break:break-all">const id = document.getElementsByName(&quot;userId&quot;);const pw = document.getElementsByName(&quot;passwd&quot;);if (pw[0].value.length &lt;= 4) {
+  alert(`${id[0].value}님 패스워드를 변경하세요`)
+}</code></pre>
+        <p>textarea의 값 읽기</p>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+                integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
+                crossorigin="anonymous" referrerPolicy="no-referrer"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+              integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
+              crossorigin="anonymous" referrerPolicy="no-referrer"/>
+        <pre class="code"><code class="language-JavaScript"
+                                                                          style="white-space:pre-wrap;word-break:break-all">const st = document.getElementById(&quot;input&quot;).value;document.getElementById(&quot;result&quot;).innerHTML = st;</code></pre>
+        <p>innerHTML과 outerHTML의 차이</p>
+        <p><code>outerHTML{&lt;div&gt;innerHTML&lt;/div&gt;}</code>
+        </p>
+        <p>체크박스에서 값 읽기</p>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+                integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
+                crossorigin="anonymous" referrerPolicy="no-referrer"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+              integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
+              crossorigin="anonymous" referrerPolicy="no-referrer"/>
+        <pre class="code"><code class="language-JavaScript"
+                                                                          style="white-space:pre-wrap;word-break:break-all">function getCheckBox() {
+  if (document.getElementById(&quot;myCheckBox&quot;).checked == true)
+    document.getElementById(&quot;result&quot;).innerHTML = &quot;작업을 진행하겠습니다.&quot;;  else    document.getElementById(&quot;result&quot;).innerHTML = &quot;사용자의 요구로 중단!&quot;;}</code></pre>
+        <p>체크박스 값 여러 개 읽기</p>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+                integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
+                crossorigin="anonymous" referrerPolicy="no-referrer"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+              integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
+              crossorigin="anonymous" referrerPolicy="no-referrer"/>
+        <pre class="code"><code class="language-JavaScript"
+                                                                          style="white-space:pre-wrap;word-break:break-all">function getCheckBox() {
+  let sum = 0;  const adds = document.getElementsByName(&quot;myAdd&quot;);  for (let i = 0; i &lt; adds.length; i++) {
+    if (adds[i].checked) {
+      sum = sum + parseInt(adds[i].value);    }
+  }
+  document.getElementById(&quot;result&quot;).innerHTML = `추가 금액: ${sum}원`}</code></pre>
+        <p>라디오 버튼에서 값 읽기</p>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+                integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
+                crossorigin="anonymous" referrerPolicy="no-referrer"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+              integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
+              crossorigin="anonymous" referrerPolicy="no-referrer"/>
+        <pre class="code"><code class="language-JavaScript"
+                                                                          style="white-space:pre-wrap;word-break:break-all">function getRadio() {
+  const choice = document.querySelectorAll(&quot;[type=&#x27;radio&#x27;]&quot;);  for (let i = 0; i &lt; choice.length; i++) {
+    if (choice[i].checked) {
+      document.getElementById(&quot;result&quot;).innerHTML = `${choice[i].value}`;      break;    }
+  }
+}</code></pre>
+        <p>드롭박스에서 값 읽기</p>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+                integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
+                crossorigin="anonymous" referrerPolicy="no-referrer"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+              integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
+              crossorigin="anonymous" referrerPolicy="no-referrer"/>
+        <pre class="code"><code class="language-JavaScript"
+                                                                          style="white-space:pre-wrap;word-break:break-all">function getSelect() {
+  const index = document.getElementById(&quot;myOption&quot;).selectedIndex;  const st = document.getElementById(&quot;myOption&quot;).options[index].value;  document.getElementById(&quot;result&quot;).innerHTML = st;}</code></pre>
+        <h3>HTML 요소 변경하기</h3>
+        <h3>내용 변경하기</h3>
+        <ul>
+            <li>텍스트 출력 메서드
+                <ul>
+                    <li style="list-style-type:circle"><code>document.write()</code>: html페이지를 새로 만들고 글자를 출력</li>
+                </ul>
+                <ul>
+                    <li style="list-style-type:circle"><code>document.writeln()</code>: 글자 끝에 줄바꿈 문자를 추가하여 출력</li>
+                </ul>
+            </li>
+        </ul>
+        <ul>
+            <li>문자 노드에 접근하는 속성
+                <ul>
+                    <li style="list-style-type:circle"><code>innerHTML</code>: HTML 태그 요소를 직접 변경, 태그 인식 가능</li>
+                </ul>
+                <ul>
+                    <li style="list-style-type:circle"><code>innerText</code>: HTML이 적용된 상태로 불러옴. <code>display:
+                        none</code>은 불러올 수 없음
+                    </li>
+                </ul>
+                <ul>
+                    <li style="list-style-type:circle"><code>textContent</code>: HTML을 제외한 모든 문자를 불러옴. <code>display:
+                        none</code>의 문자도 가져옴
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <blockquote>ex8-10.html<br/>문자열 회전 예제<br/></blockquote>
+        <h3>속성 변경하기</h3>
+        <blockquote>ex8-11.html</blockquote>
+        <h3>스타일 변경하기</h3>
+        <blockquote>ex8-12.html</blockquote>
+        <h3>HTML 요소 추가와 삭제하기</h3>
+        <h3>노드 추가하기</h3>
+        <ul>
+            <li><code>createElement(&quot;tag&quot;)</code>: <code>&lt;tag&gt;</code> 노드를
+                생성한다
+            </li>
+        </ul>
+        <ul>
+            <li><code>appendChild(node)</code>: 부모 노드에 node를 추가한다</li>
+        </ul>
+        <ul>
+            <li><code>removeChild(node)</code>: 부모 노드에 node를 삭제한다</li>
+        </ul>
+    </div>
+</article>
+</body>
+</html>

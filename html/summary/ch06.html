@@ -1,0 +1,55 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <title>ch06</title>
+</head>
+<body>
+<article>
+    <header>
+        <h1 class="page-title">ch06</h1>
+        <p class="page-description"></p>
+    </header>
+    <div class="page-body">
+        <h1>JavaScript와 ES6</h1>
+        <h2>JavaScript 이해하기</h2>
+        <p>JavaScript 자료형 8가지<br/>- number<br/>- string<br/>- boolean<br/>-
+            object<br/>- undefined<br/>- null<br/>- big integer<br/>- symbol<br/></p>
+        <p>JS의 애매한 자료형 -&gt; 확실한 자료형 TypeScript</p>
+        <h3>변수 만들기</h3>
+        <ul>
+            <li><code>a</code>: global</li>
+        </ul>
+        <ul>
+            <li><code>var a</code>: function scope</li>
+        </ul>
+        <ul>
+            <li><code>let a</code>: block scope</li>
+        </ul>
+        <ul>
+            <li><code>const a</code>: 상수</li>
+        </ul>
+        <pre class="code"><code class="language-JavaScript">let text1 = &quot;hello&quot;;let text1 = &quot;hi&quot;; // 불가능!!var text2 = &quot;hello&quot;;var text2 = &quot;hi&quot;; // 가능</code></pre>
+        <h3>변수 여러 개 만들기</h3>
+        <pre class="code"><code class="language-JavaScript">let text = &quot;hello&quot;, num = 7;</code></pre>
+        <h3>변수의 초기화</h3>
+        <p>undefined &lt;-&gt; null</p>
+        <h2>조건문과 반복문</h2>
+        <h3>3항 조건문</h3>
+        <pre class="code"><code class="language-JavaScript">drink == &quot;yes&quot; ? document.write(&quot;오늘부터 1일&quot;) : document.write(&quot;헤어진다&quot;);</code></pre>
+        <h2>함수와 변수의 범위</h2>
+        <p>리턴이 없는 함수의 리턴값은 <code>undefined</code></p>
+        <h3>이름 없는 함수</h3>
+        <pre class="code"><code class="language-JavaScript">let sum = function (num1, num2) {
+  return num1 + num2
+}
+let rst = sum(2, 3) // 5</code></pre>
+        <h3>화살표 함수</h3>
+        <pre class="code"><code class="language-JavaScript">let sum = (num1, num2) =&gt; num1 + num2;let rst = sum(1, 2) // 3</code></pre>
+        <h3>템플릿 문자열과 변수</h3>
+        <pre class="code"><code class="language-JavaScript">let str = &quot;yes&quot;:document.write(`결과: ${str} 오늘부터 1일`)</code></pre>
+    </div>
+</article>
+</body>
+</html>
