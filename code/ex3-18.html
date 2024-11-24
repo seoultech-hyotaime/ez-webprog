@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>라벨로 연결하기</title>
+</head>
+<body>
+  <form action="server.php" method="post">
+    <label>아이디 <input type="text" id="id"></label><br><br> 
+    <label for="pwd">비밀번호 </label><br>
+    <input type="password" id="pwd"> 
+    <input type="submit" value="login">
+  </form>
+  <br><hr>
+  <p>보고 싶은 동물을 고르세요.(그림을 눌러도 선택 됨)</p>
+  <label><input type="checkbox" name="prefer" value="1">판다
+    <img src="../../media/panda2.png" height="120"></label>
+  <label><input type="checkbox" name="prefer" value="2">하마 
+    <img src="../../media/hippo.png" height="120"></label> 
+  <label><input type="checkbox" name="prefer" value="3">라마 
+    <img src="../../media/lama2.png" height="120"></label>  
+</body>
+</html>
