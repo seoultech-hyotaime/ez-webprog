@@ -1,17 +1,27 @@
-<html>
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ch05</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../javascript/script.js"></script>
 </head>
 <body>
-<article>
-    <header><h1 class="page-title">ch05</h1>
-        <p class="page-description"></p></header>
-    <div class="page-body"><h1 class="">CSS의 고급 기능</h1>
-        <h2 class="">레이아웃 만들기</h2>
-        <h3 class="">박스 제어하기</h3>
+<!-- 네비게이션 바 -->
+<header class="navbar">
+    <nav>
+        <a href="../index.html">쉽게 하는 웹 프로그래밍</a>
+        &gt;
+        <span>Chapter 5: CSS의 고급 기능</span>
+    </nav>
+</header>
+<div class="container">
+    <!-- 왼쪽: 노트 영역 -->
+    <div class="note-section">
+        <h1>CSS의 고급 기능</h1>
+        <h2>레이아웃 만들기</h2>
+        <h3>박스 제어하기</h3>
         <h3>레이아웃의 이해</h3>
         <p>인라인 태그와 블록 태그</p>
         <table border="1px">
@@ -23,11 +33,13 @@
             </thead>
             <tbody>
             <tr>
-                <td><code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;i&gt;</code>, <code>&lt;b&gt;</code>,
+                <td><code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;i&gt;</code>,
+                    <code>&lt;b&gt;</code>,
                     <code>&lt;mark&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;br&gt;</code>,
                     <code>&lt;input&gt;</code>,
                     <code>&lt;select&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;button&gt;</code></td>
-                <td><code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;ul&gt;</code>,
+                <td><code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;ol&gt;</code>,
+                    <code>&lt;ul&gt;</code>,
                     <code>&lt;li&gt;</code>,
                     <code>&lt;hr&gt;</code>, <code>&lt;div&gt;</code>, <code>&lt;table&gt;</code>,
                     <code>&lt;form&gt;</code></td>
@@ -67,7 +79,8 @@
             <li><code>auto</code>: 자동으로 박스 크기를 조절함</li>
             <li>단위가 없는 양수: 전체에서 해당 태그가 차지하는 공간의 비율</li>
         </ul>
-        예제<code>ex5-9.html</code> 참고<br/>첫 번째 박스의 폭을 <br/><code>width</code>로 지정하고 두 번째를 <code>flex: 1</code>로 지정하면 컨테이너의 남은 폭을 알아서 채워줌.
+        예제<code>ex5-9.html</code> 참고<br/>첫 번째 박스의 폭을 <br/><code>width</code>로 지정하고 두 번째를 <code>flex: 1</code>로 지정하면
+        컨테이너의 남은 폭을 알아서 채워줌.
         <h4>앞뒤로 배치하는 속성<code>z-index</code></h4>
         <code>z-index</code>가 클수록 앞으로 튀어나옴
         <h4>박스를 벗어난 영역을 처리하는 속성 <code>overflow</code></h4>
@@ -123,6 +136,23 @@
         <h3>커서 모양 바꾸기</h3>
         <code>cursor</code> 속성 사용</p>
     </div>
-</article>
-</body>
+    <!-- 오른쪽: 실습 영역 -->
+    <div class="practice-section">
+        <!-- 코드 작성 공간 -->
+        <div class="editor">
+            <h2>실습</h2>
+            <textarea id="codeEditor" rows="10" style="width: 100%;"></textarea>
+            <button id="runCode" style="margin-top: 10px;">실행</button>
+            <button id="runCodeBlank" style="margin-top: 10px;">새 탭에서 실행</button>
+            <a>&#8251; 일부 코드는 현재 페이지 내에서 동작하지 않을 수 있습니다.</a>
+        </div>
+        <!-- 드래그 핸들 -->
+        <div class="drag-handle"></div>
+        <!-- 결과 영역 -->
+        <div class="output">
+            <h2>결과</h2>
+            <iframe id="resultFrame"></iframe>
+        </div>
+    </div>
+</div>
 </html>
