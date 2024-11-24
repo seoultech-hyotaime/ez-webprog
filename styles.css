@@ -1,0 +1,67 @@
+/* Reset */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Header Styling */
+.header {
+    background-color: #0078d7;
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.page-title {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.page-description {
+    font-size: 1rem;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Page Body Styling */
+.page-body {
+    padding: 20px;
+    max-width: 800px;
+    margin: 30px auto;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Chapter List */
+.chapter-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.chapter-list li {
+    margin-bottom: 15px;
+}
+
+.chapter-list a {
+    display: block;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    color: #0078d7;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.chapter-list a:hover {
+    background-color: #0078d7;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
