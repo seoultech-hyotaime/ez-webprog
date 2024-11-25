@@ -15,7 +15,7 @@ textarea {
 }
 
 button {
-    background-color: #0078d7;
+    background-color: #B5651D;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -24,7 +24,7 @@ button {
 }
 
 button:hover {
-    background-color: #0053a4;
+    background-color: #FF0000;
 }
 
 /* 전체 컨테이너 */
@@ -80,7 +80,7 @@ button:hover {
 
 /* 네비게이션 바 스타일 */
 .navbar {
-    background-color: #0078d7;
+    background-color: #B5651D;
     flex: 0 0 60px; /* 네비게이션 바 고정 높이 */
     color: white;
     padding: 10px 20px;

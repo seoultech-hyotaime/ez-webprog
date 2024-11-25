@@ -9,7 +9,7 @@ body {
 
 /* Header Styling */
 .header {
-    background-color: #0078d7;
+    background-color: #B5651D;
     color: white;
     text-align: center;
     padding: 20px 10px;
@@ -55,13 +55,13 @@ body {
     padding: 10px 15px;
     border-radius: 5px;
     background-color: #f1f1f1;
-    color: #0078d7;
+    color: #B5651D;
     font-size: 1.1rem;
     transition: all 0.3s ease;
 }
 
 .chapter-list a:hover {
-    background-color: #0078d7;
+    background-color: #B5651D;
     color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
