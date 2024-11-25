@@ -103,10 +103,10 @@ window.onload = function () {
     });
 
     runCodeBlankButton.addEventListener('click', () => {
-    const code = codeEditor.value;
-    const newWindow = window.open('', '_blank');
-    newWindow.document.open();
-    newWindow.document.write(code);
-    newWindow.document.close();
-});
+        const code = codeEditor.value;
+        const newWindow = window.open('', '_blank');
+        newWindow.document.open();
+        newWindow.document.write(code);
+        newWindow.document.close();
+    });
 }
