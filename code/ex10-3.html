@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>윈도우의 폭 이용하기</title>
+  <style>
+    div {
+      background: #ffe;
+      border: 1px solid #9cc;
+      padding: 10px 30px;
+    } 
+    .flex_font { font-size: 20px; }
+  </style>
+</head>
+<body>
+  <div><b>innerWidth 미사용:</b> 웹 브라우저 창을 양옆으로 
+    늘이거나 줄여도 폰트의 크기가 변하지 않음</div>
+  <div class="flex_font" id="resizeFont"><b>innerWidth 사용: </b>
+    웹 브라우저 창을 양옆으로 늘이거나 줄이면 창 크기에 따라 폰트의 크기가 변함</div>
+  <script>
+    function adjustFont() {
+      const width = window.innerWidth;
+      const divBox = document.getElementById('resizeFont');
+
+      if (width <= 700 && width > 600) 
+        divBox.style.fontSize = '16px';
+      else if (width <= 600) 
+        divBox.style.fontSize = '12px';
+      else 
+        divBox.style.fontSize = '20px';
+    }
+    adjustFont();
+    window.addEventListener('resize', adjustFont);
+  </script>
+</body>
+</html>

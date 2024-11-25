@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>클릭으로 함수 호출하기</title>
+  <link rel="stylesheet" href="style_js.css">
+</head>
+<body>
+  <h1 id="alter" onclick="change()">Change Colors</h1>
+  <script>
+    function change() {
+      const alter = document.getElementById("alter");
+      alter.style.background = "aqua";
+    }
+  </script>
+</body>
+</html>

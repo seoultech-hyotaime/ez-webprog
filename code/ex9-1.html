@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>이벤트 리스너 사용하기</title>
+  <link rel="stylesheet" href="style_js.css">
+  <style>
+    body { text-align: center; }
+    #rotateImage { transition: transform 1s; }
+  </style>
+</head>
+<body>
+  <h4>이미지를 클릭해보세요</h4><hr>
+  <img id="rotateImage" src="../media/photo1.jpg" onclick="rotate()">
+  <script>
+    let deg = 0;
+    let image = document.getElementById("rotateImage");
+
+    function rotate() {
+      deg = deg + 360; 
+      image.style.transform = "rotate(" + deg + "deg)";
+    } 
+  </script>
+</body>
+</html>

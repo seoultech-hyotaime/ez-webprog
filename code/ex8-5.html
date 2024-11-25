@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>textarea에서 값 읽기</title>
+  <link rel="stylesheet" href="style_js.css">
+<body>
+  <textarea id="input" rows="5" cols="20"></textarea><br>
+  <input type="button" value="Get Text" onClick="getTextarea()"><hr>
+  <p id="result"></p>
+  <script>
+    function getTextarea() {
+      const st = document.getElementById("input").value;
+      document.getElementById("result").innerHTML = st;
+    }
+  </script>
+</body>
+</html>

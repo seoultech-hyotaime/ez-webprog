@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>class를 이용한 객체 상속하기</title>
+  <link rel="stylesheet" href="style_js.css">
+<body>
+  <script>
+    class Animal {
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+    }
+    class Person extends Animal {
+      constructor(name, age, id) {
+        super(name, age);        // Animal 객체의 속성에 접근
+        this.id = id;
+      }
+    }
+    class Dog extends Animal {
+      constructor(name, age, owner) {
+        super(name, age);        // Animal 객체의 속성에 접근
+        this.owner = owner;
+      }
+    }
+    let ps = new Person("성호", 23, 7634);
+    let dog = new Dog("시고르자브종", 3, "성호");
+    document.write(`${ps.name}의 나이는 ${ps.age}살, ID: ${ps.id}<hr>`);
+    document.write(`${dog.owner}의 개 ${dog.name}의 나이는 ${dog.age}살<hr>`);
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>모양 바꾸기</title>
+  <style>
+    img { width: 150px; }
+    @keyframes scale {
+      0%, 100% { transform: scale(1, 1); }
+      50% { transform: scale(0, 0) }
+    }
+    @keyframes rotateX {
+      0% { transform: rotateX(0); }
+      100% { transform: rotateX(360deg); }
+    }
+    @keyframes rotatePX {
+      0% { transform: perspective(150px) rotateX(0); }
+      100% { transform: perspective(150px) rotateX(360deg); }
+    }
+    @keyframes rotatePY {
+      0% { transform: perspective(150px) rotateY(0); }
+      100% { transform: perspective(150px) rotateY(360deg); }
+    }
+    @keyframes rotateZ {
+      0% { transform: rotateZ(0); }
+      100% { transform: rotateZ(360deg); }
+    }
+    @keyframes skew {
+      0%, 100% { transform: skewY(0); }
+      50% { transform: skewY(40deg); }
+    }  
+  </style>
+</head>
+<body>
+  <img src="../media/italy.jpg" style="animation: scale 5s infinite"><br>
+  <img src="../media/italy1.jpg" style="animation: rotateX 5s infinite">
+  <img src="../media/italy1.jpg" style="animation: rotatePX 5s infinite"><br>
+  <img src="../media/italy3.jpg" style="animation: rotatePY 5s infinite"><br>
+  <img src="../media/italy4.jpg" style="animation: rotateZ 5s infinite"><br>
+  <img src="../media/italy5.jpg" style="animation: skew 5s infinite"><br>
+</body>
+</html>

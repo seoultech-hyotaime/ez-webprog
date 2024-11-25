@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>input과 무작위 수 사용하기</title>
+  <link rel="stylesheet" href="style_js.css">
+<body>
+  음식 1개당 1200원입니다. 얼마 내실래요?<hr>
+  <input type="text" id="input">
+  <button onclick="randomFood()">order</button>
+  <script>
+    function randomFood() {
+      const money = parseInt(document.getElementById('input').value);
+      const fnum = Math.floor(money / 1200);
+      const change = money - (fnum * 1200);
+      if (money >= 1200) {
+        for (let i = 1; i <= fnum ; i++) { 
+          food = Math.floor(Math.random() * 3) + 1;
+          document.write(i + "<img src='../media/food" + food + ".png'>");
+        }
+        document.write("<h3>합:" + fnum * 1200 + ", 반환:" + change + "</h3>");
+      } else 
+        document.write("금액이 모자랍니다");
+    }
+  </script>
+</body>
+</html>

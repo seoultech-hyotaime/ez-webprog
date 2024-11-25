@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rainbow Charaters</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #fff;
+      font-family: Arial, sans-serif;
+    }
+    #textContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100px;
+      font-size: 3rem;
+    }
+    button {
+      padding: 3px 10px;
+      font-size: 16px;
+      background-color: #99aed5;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" id="textInput" placeholder="텍스트를 입력하세요"><br>
+  <button id="startButton">Start</button>
+  <div id="textContainer"></div>
+  
+  <script>
+    const textInput = document.getElementById('textInput');
+    const startButton = document.getElementById('startButton');
+    const textContainer = document.getElementById('textContainer');
+    let animationInterval;
+
+    startButton.addEventListener('click', () => {
+      const inputText = textInput.value;
+      if (inputText.trim() === '') {
+        return;
+      }
+      clearInterval(animationInterval); 
+      textContainer.innerHTML = '';
+
+      for (let i = 0; i < inputText.length; i++) {
+        const span = document.createElement('span');
+        span.innerText = inputText[i];
+        textContainer.appendChild(span);
+      }
+
+      animationInterval = setInterval(() => {
+        const spans = textContainer.querySelectorAll('span');
+        spans.forEach(span => {
+          const randomColor = getRandomColor();
+          span.style.color = randomColor;
+        });
+      }, 100); 
+    });
+
+    function getRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+  </script>
+</body>
+</html>

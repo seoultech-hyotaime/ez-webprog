@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>선형 그레이디언트 만들기</title>
+</head>
+<body>
+  <canvas id="myCanvas" width="700" height="400"
+    style="border: 2px solid #cef"> </canvas>
+  <script>
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+    let gradient = ctx.createLinearGradient(50, 50, 650, 50); // 선형 그레이디언트
+    gradient.addColorStop(0, "purple");	   	   // 오프셋 = 0은 시작점
+    gradient.addColorStop(1, "white");		   // 오프셋 = 1은 종료점
+
+    ctx.fillStyle = gradient;
+    ctx.fillRect(50, 50, 600, 300);
+  </script>
+</body>
+</html>

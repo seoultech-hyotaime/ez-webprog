@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>원형 그레이디언트 만들기</title>
+</head>
+<body>
+  <canvas id="myCanvas" width="700" height="400"
+    style="border: 2px solid #cef"> </canvas>
+  <script>
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+    let gradient = ctx.createRadialGradient(350, 200, 150, 300, 120, 10);
+    gradient.addColorStop(0, "blue");
+    gradient.addColorStop(1, "white");
+
+    ctx.beginPath();
+    ctx.arc(350, 200, 150, 0, 2 * Math.PI);
+    ctx.fillStyle = gradient;
+    ctx.fill();
+  </script>
+</body>
+</html>

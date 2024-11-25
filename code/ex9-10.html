@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>resize 이벤트 사용하기</title>
+  <link rel="stylesheet" href="style_js.css">
+</head>
+<body>
+  <p>Resize the window!</p>
+  <script>
+   function winResize() {
+     let size = window.innerWidth / 20; 
+     document.body.style.fontSize = size + "px";
+   }
+   winResize();          // 페이지 로드 시 초기화
+   window.addEventListener("resize", winResize); 
+  </script>
+</body>
+</html>

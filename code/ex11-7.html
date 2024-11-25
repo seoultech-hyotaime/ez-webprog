@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>곡선 그리기</title>
+</head>
+<body>
+  <canvas id="myCanvas" width="700" height="500"
+    style="border: 2px solid #cef"> </canvas>
+  <script>
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+    let y = 500;
+
+    function draw() {
+      if (y > -500) {
+        ctx.beginPath();
+        ctx.moveTo(0, 500);			  // 시작점 (x, y)
+        ctx.quadraticCurveTo(600, y, 700, 500);   // 제어점 (x, y)와 종료점 (x, y)
+        ctx.strokeStyle = `rgb(${(500 - y) % 255}, 0, 0)`;
+        ctx.stroke();
+        y = y - 5;
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();  
+  </script>
+</body>
+</html>

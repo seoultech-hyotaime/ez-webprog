@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>뷰포트 단위 사용하기</title>
+  <style>
+    div {
+      height: 48vh;
+      background: #ffe;
+      border: 1px solid #9cc;
+    }
+    .flex_h{ background: #fbb; }
+    @media (max-height: 500px) {
+      .flex_h{ background: #bfb; }
+    }
+    @media (max-height: 400px) {
+      .flex_h{ background: #bbf; }
+    } 
+  </style>
+</head>
+<body>
+  <div><b>height: 48vh</b><br>
+    창을 위아래로 늘이거나 줄여보자</div>
+  <div class="flex_h"><b>height: 48vh</b><br>
+    창을 위아래로 늘이거나 줄여보자</div>
+</body>
+</html>

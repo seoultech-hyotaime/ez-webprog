@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>인라인 태그와 블록 태그</title>
+  <style>
+    span, div {
+      background-color: #feb;
+      border: 1px solid #715;
+      margin: auto;   /* 블록 태그의 화면 중앙 배치  */
+      width: 150px;   /* 인라인 태그는 크기지정 무시 */
+      height: 60px;   /* 인라인 태그는 크기지정 무시 */
+    }
+  </style>
+</head>
+<body style="font-size: 20px; font-weight: bold">
+  span 태그(인라인 태그):<br>
+  <p><span>span</span> <span>한 줄에 표시</span></p>
+  div 태그(블록 태그):<br> 
+  <p><div>div</div> <div>블록에 표시</div></p>
+</body>
+</html>

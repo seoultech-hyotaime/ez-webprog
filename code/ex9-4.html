@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>이벤트의 전파와 방향</title>
+  <style>
+    div {
+      padding: 40px;
+      border: 1px solid #c9a;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="parent">div 부모 태그
+    <div id="child">div 자식 태그</div>
+  </div>
+  <script>
+    document.getElementById("parent").addEventListener("click", function() {
+      alert("부모 요소에 클릭 이벤트 발생(버블링 단계)");
+    });    // 부모 태그에 클릭 이벤트 리스너 추가(버블링 방식)
+  
+    document.getElementById("child").addEventListener("click", function() {
+      alert("자식 요소에 클릭 이벤트 발생(버블링 단계)");
+    });    // 자식 태그에 클릭 이벤트 핸들러 추가(버블링 방식)
+
+    document.getElementById("parent").addEventListener("click", function() {
+      alert("부모 요소에 클릭 이벤트 발생(캡처링 단계)");
+    }, true); // 부모 태그에 클릭 이벤트 리스너 추가(true = 캡처링 방식)
+
+    document.getElementById("child").addEventListener("click", function() {
+      alert("자식 요소에 클릭 이벤트 발생(캡처링 단계)");
+    }, true); // 자식 태그에 클릭 이벤트 리스너 추가(true = 캡처링 방식)
+  </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>for-in으로 개별 속성에 접근하기</title>
+  <link rel="stylesheet" href="style_js.css">
+<body>
+  <script>
+    let person = new Object();
+    person.name = "cho";
+    person.age = 23;
+    person.weight = 70;
+
+    for(let prop in person) {
+      document.write(prop + ": " + person[prop] + "<hr>");
+    } 
+  </script>
+</body>
+</html>

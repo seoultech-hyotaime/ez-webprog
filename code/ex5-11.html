@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>박스를 벗어난 영역 처리하기</title>
+  <style>
+    div {
+      display: inline-block;
+      width: 150px;
+      height: 100px;
+      background: #ffe;
+      border: 1px solid #9cc;
+      margin: 10px;
+    } 
+  </style>
+</head>
+<body>
+  <div style="overflow: visible"><b>(overflow: visible)</b> The Eiffel Tower 
+is a wrought-iron lattice tower in Paris, France. Constructed from 1887.</div>
+  <div style="overflow: hidden"><b>(overflow: hidden)</b> The Eiffel Tower 
+is a wrought-iron lattice tower in Paris, France. Constructed from 1887.</div>
+  <div style="overflow: scroll"><b>(overflow: scroll)</b> The Eiffel Tower 
+is a wrought-iron lattice tower in Paris, France. Constructed from 1887.</div>
+  <div style="overflow: auto"><b>(overflow: auto)</b> The Eiffel Tower 
+is a wrought-iron lattice tower in Paris, France. Constructed from 1887.</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>버튼으로 매개변수 전달하기</title>
+  <link rel="stylesheet" href="style_js.css">
+</head>
+<body>
+  <h1 id="alter">Change Colors</h1><hr>
+  <button onclick="change('red')">red</button>
+  <button onclick="change('blue')">blue</button>
+  <button onclick="change('yellow')">yellow</button>
+  <button onclick="change('green')">green</button>
+  <script>
+    function change(colors) {
+      const alter = document.getElementById('alter');
+      alter.style.color = colors;
+    }
+  </script>
+</body>
+</html>

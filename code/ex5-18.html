@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>애니메이션과 @keyframes</title>
+  <style>
+    @keyframes down {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(400px);  }
+    }
+  </style>
+</head>
+<body>
+  <img src="../../font/font_h.png" style="animation: down 3s">
+  <img src="../../font/font_t.png" style="animation: down 3s 5 linear">
+  <img src="../../font/font_m.png" style="animation: down 3s infinite">
+  <img src="../../font/font_l.png" style="animation: down 3s infinite alternate">
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>자동 스크롤하기</title>
+  <link rel="stylesheet" href="style_js.css">
+</head>
+<body style="text-align: center">
+  <h2>자동 스크롤</h2><hr>
+  <script>
+    for (let i = 1; i <= 25; i++) 
+      document.write(i + '<hr>');
+
+    let pos = 0;
+    const speed = 40;      // 위아래 스크롤 속도
+    setInterval(function() {
+      window.scrollBy(0, speed);         
+      pos = pos + speed;
+      if (pos >= innerHeight + speed) {
+        pos = 0;
+        window.scrollTo(0, 0);
+      }
+    }, 500);
+  </script>
+</body>
+</html>

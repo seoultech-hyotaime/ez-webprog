@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>윈도우의 높이 이용하기</title>
+  <style>
+    div {
+      height: 48vh;
+      background: #ffe;
+      border: 1px solid #9cc;
+    }
+    .flex_h { background: #fbb; }
+  </style>
+</head>
+<body>
+  <div><b>innerHeight 미사용</b><br> 창을 위아래로 늘이거나 줄여보자</div>
+  <div class="flex_h" id="changeColor"><b>innerHeight 사용</b><br>
+    창을 위아래로 늘이거나 줄여보자</div>
+  <script>
+    function adjustHeight() {
+      const height = window.innerHeight;
+      const divBox = document.getElementById('changeColor');
+
+      if (height <= (window.screen.height * 0.5) && height >
+        (window.screen.height * 0.3)) 
+        divBox.style.background = '#bfb';
+      else if (height <= (window.screen.height * 0.3)) 
+        divBox.style.background = '#bbf';
+      else
+        divBox.style.background = '#fbb';
+    }
+    adjustHeight();
+    addEventListener('resize', adjustHeight);
+  </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>switch 조건문 사용하기</title>
+  <link rel="stylesheet" href="style_js.css">
+<body>
+  <script>
+    let coupon = parseInt(prompt("패키지 번호를 입력하세요"));
+    document.write("패키지: " + coupon + "번<hr>");
+    switch (coupon) {
+      case 1:		   
+        document.write("돌고래쇼 ");	    	// 1번 패키지
+      case 2:  		   
+        document.write("놀이기구 10종 ");	// 2번 패키지
+      default :		   
+        document.write("입장권");	    	// 3번 패키지
+     }
+  </script>
+</body>
+</html>

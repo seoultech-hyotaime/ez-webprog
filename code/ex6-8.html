@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>다중 조건문 사용하기</title>
+  <link rel="stylesheet" href="style_js.css">
+<body>
+  <script>
+    let coupon = parseInt(prompt("쿠폰 개수를 입력하시오"));
+    document.write("쿠폰: " + coupon + "장<hr>");
+    if (coupon >= 20) {		   
+      document.write("여행용 가방");	    	// 20 이상일 때
+    } else if (coupon >= 10) { 		   
+      document.write("다이어리");	    	// 10 이상일 때
+    } else {		   
+      document.write("커피 한 잔");	    	// 10 미만일 때
+    }
+  </script>
+</body>
+</html>

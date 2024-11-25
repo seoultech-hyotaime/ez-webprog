@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>윈도우 이동시키기</title>
+  <link rel="stylesheet" href="style_js.css">
+</head>
+<body>
+  <input type="button" value="윈도우 만들기" onclick="openWin()"><hr>
+  <input type="button" value="윈도우 위로" onclick="upWin()"><br>
+  <input type="button" value="윈도우 아래로" onclick="downWin()"><hr>
+  <input type="button" value="윈도우 닫기" onclick="closeWin()">
+  <script>
+    let newWin;
+    function openWin() {
+        newWin = open("", "", "width=300, height=200");
+        newWin.document.write("움직이는 윈도우");
+        newWin.moveTo(300, 300);
+    }
+    function upWin() {
+        newWin.moveBy(0, -10);
+    }
+    function downWin() {
+        newWin.moveBy(0, 10);
+    }
+    function closeWin() {
+      if (newWin)                 
+        newWin.close();
+    }
+  </script>
+</body>
+</html>

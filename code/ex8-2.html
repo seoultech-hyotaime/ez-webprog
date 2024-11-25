@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>요소 여러 개에 접근하기</title>
+  <link rel="stylesheet" href="style_js.css">
+<body>
+  <p>p & No class</p>
+  <p class="elm">p class="elm" 1</p>
+  <p class="elm">p class="elm" 2</p><hr>
+  <script>
+    const elms = document.getElementsByClassName("elm"); 
+    for (let i = 0; i < elms.length; i++)
+      document.write(`ByClassName: elms[${i}] = ${elms[i].innerHTML}<br>`);
+    document.write("<hr>");
+    const tags = document.getElementsByTagName("p"); 
+    for (let i = 0; i < tags.length; i++)
+      document.write(`ByTagName P: tags[${i}] = ${tags[i].innerHTML}<br>`);
+  </script>
+</body>
+</html>

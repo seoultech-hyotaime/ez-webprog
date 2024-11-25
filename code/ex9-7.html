@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>wheel 이벤트 사용하기</title>
+  <link rel="stylesheet" href="style_js.css">
+  <style>
+    body { 
+      text-align: center; 
+      overflow: hidden; 
+    }
+  </style>
+</head>
+<body>
+  <h4>마우스의 휠을 돌려보세요</h4><hr>
+  <img id="largerImage" src="../media/photo5.jpg" width="320" height="210">
+  <script>
+    const image = document.getElementById("largerImage");
+    let wb = 320, hb = 210;
+
+    document.addEventListener('wheel', (event) => {
+      event.preventDefault();               // 기본 스크롤 이벤트 제거
+      if (event.deltaY < 0) {
+        wb = wb * 1.1;
+        hb = hb * 1.1;
+      } else {
+        wb = wb / 1.1;
+        hb = hb / 1.1;
+      }
+      image.style.width = wb + 'px';
+      image.style.height = hb + 'px';
+    });
+  </script>
+</body>
+</html>

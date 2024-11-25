@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>함수를 사용한 음식 주문하기</title>
+  <link rel="stylesheet" href="style_js.css">
+</head>
+<body>
+  <script>
+    function make(num) {
+      if (num >= 1  && num <= 3 ) {
+        document.write("<img src='../media/food" + num + ".png'>");
+        return true;
+      } else return false;
+    }
+    const food = parseInt(prompt("햄버거=1, 피자=2, 감자튀김=3"));
+    const result = make(food);
+    if (result)
+      document.write("<hr>식사 맛있게 하세요");
+    else
+      document.write("없는 음식을 주문하셨습니다");
+  </script>
+</body>
+</html>

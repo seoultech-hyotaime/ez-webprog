@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>키보드 좌우 화살표 키 사용하기</title>
+  <link rel="stylesheet" href="style_js.css">
+</head>
+<body>
+  <h4>좌우 화살표 키를 눌러 보세요</h4><hr>
+  <img id="largerImage" src="../media/photo7.jpg">
+  <script>
+    const image = document.getElementById("largerImage");
+    let wb = 0;
+
+    document.addEventListener("keydown", (event) => {
+      if(event.key == "ArrowLeft") 
+        moveImage(-10);
+      else if(event.key == "ArrowRight")
+        moveImage(10);
+    });
+    function moveImage(m) {
+      wb = wb + m;
+      if ( wb < 0 ) wb = 0;
+      else if ( wb > 450 ) wb = 450;
+      image.style.transform = `translateX(${wb}px)`;
+    } 
+  </script>
+</body>
+</html>

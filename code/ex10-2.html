@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>윈도우 닫기</title>
+  <link rel="stylesheet" href="style_js.css">
+  <style>
+    a { text-decoration-line: none; }
+   </style>
+</head>
+<body>
+  <a href="#" onclick="openWin()">누르면 새 창이 열립니다.</a><hr>
+  <a href="#" onclick="closeWin()">열린 창 닫기</a>
+  <script>
+    let nw;
+    function openWin() {
+      nw = open("", "_blank", "width=700, height=400, left=10, top=10");
+      nw.document.write("<h2>여기는 새 창</h2>");
+    } 
+    function closeWin() {
+      if (nw)                  // 창이 존재하면 nw == true
+        nw.close();
+    }
+  </script>
+</body>
+</html>

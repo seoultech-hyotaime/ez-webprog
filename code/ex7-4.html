@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>String 객체의 메서드 사용하기</title>
+  <link rel="stylesheet" href="style_js.css">
+<body>
+  <script>
+    const s1 = new String("Web ");
+    const s2 = "Programming";
+    document.write(`s1 = "${s1}"<br>`);
+    document.write(`s2 = "${s2}"<hr>`);
+
+    document.write(`s1.charAt(0) : ${s1.charAt(0)}<hr>`);
+    document.write(`s1.concat(s2) : ${s1.concat(s2)}<hr>`);
+    document.write(`s2.indexOf("i") : ${s2.indexOf("i")}<hr>`);
+    document.write(`s2.replace("m", "M") : ${s2.replace("m", "M")}<hr>`);
+    document.write(`s2.search("m") : ${s2.search("i")}<hr>`);
+    document.write(`s2.split("a") : ${s2.split("a")}<hr>`);
+    document.write(`s2.substr(2) : ${s2.substr(2)}<hr>`);
+    document.write(`s2.substring(3) : ${s2.substring(3)}<hr>`);
+    document.write(`s2.slice(3, -1) : ${s2.slice(3, -1)}<hr>`);
+    document.write(`s2.toLowerCase() : ${s2.toLowerCase()}<hr>`);
+    document.write(`s2.toUpperCase() : ${s2.toUpperCase()}<hr>`);
+    document.write(`s1.trim() : +${s1.trim()}+`);
+  </script>
+</body>
+</html>

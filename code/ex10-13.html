@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>반응형 웹 페이지와 @media</title>
+  <style>
+    div {
+      background: #ffe;
+      border: 1px solid #9cc;
+      padding: 10px 30px;
+    } 
+    .flex_font{ font-size: 20px }
+    @media (max-width: 700px) {
+      .flex_font{ font-size: 16px }
+    }
+    @media (max-width: 600px) {
+      .flex_font{ font-size: 12px }
+    }
+  </style>
+</head>
+<body>
+  <div><b>@media 미사용:</b>
+    웹 브라우저 창을 좌우로 늘이거나 줄여도
+    폰트의 크기가 변하지 않음</div>
+  <div class="flex_font"><b>@media 사용: </b>
+    웹 브라우저 창을 좌우로 늘이거나 줄이면
+    창 크기에 따라 폰트의 크기가 변함</div>
+</body>
+</html>

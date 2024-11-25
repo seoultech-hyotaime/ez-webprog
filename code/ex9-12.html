@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>focus와 blur 이벤트 사용하기</title>
+  <link rel="stylesheet" href="style_js.css">
+  <style>
+    body { text-align: center; }
+    #inputField {
+      padding: 10px;
+      font-size: 16px;
+      outline: none;
+      border: 2px solid #3498db;
+    }
+    #inputField:focus { border: 2px dotted #e74c3c; }
+  </style>
+</head>
+<body>
+  <input type="text" id="inputField" placeholder="클릭하세요!">
+  <script>
+    const inputField = document.getElementById("inputField");
+   
+    inputField.addEventListener("focus", function() {
+      inputField.placeholder = "입력하세요";
+    });           // 포커스 이벤트 리스너 등록
+
+    inputField.addEventListener("blur", function() {
+      inputField.placeholder = "클릭하세요!";
+    });          // 블러 이벤트 리스너 등록
+  </script>
+</body>
+</html>

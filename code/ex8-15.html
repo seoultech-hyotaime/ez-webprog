@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>테이블 요소 추가하기</title>
+  <style>
+    table, td { border-collapse: collapse; }
+  </style>
+  <link rel="stylesheet" href="style_js.css">
+</head>
+<body>
+  <table id="target">
+    <tr><td>원래 셀</td><td>원래 셀</td></tr>
+  </table><br>
+  <button onClick="insertTable()">행 추가</button>
+  <script>
+    let num = 1;
+    function insertTable() {
+      let table = document.getElementById("target");
+      let row = table.insertRow(num);
+      let cell1 = row.insertCell(0);
+      let cell2 = row.insertCell(1);
+      cell1.innerHTML = `추가 셀 ${num}`;
+      cell2.innerHTML = `추가 셀 ${num}`;
+      num++
+    }
+  </script>
+</body>
+</html>

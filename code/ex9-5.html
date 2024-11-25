@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>이벤트 전파 중지하기</title>
+  <style>
+    div {
+      padding: 40px;
+      border: 1px solid #c9a;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="parent">div 부모 태그
+    <div id="child">div 자식 태그(이벤트 전파 중지)</div>
+  </div>
+  <script>
+    document.getElementById("parent").addEventListener("click", function() {
+      alert("부모 요소에 클릭 이벤트 발생");
+    });    
+  
+    document.getElementById("child").addEventListener("click", function(e) {
+      alert("자식 요소에 클릭 이벤트 발생");
+      e.stopPropagation();      // 이벤트 전파 중지
+    });    
+  </script>
+</body>
+</html>

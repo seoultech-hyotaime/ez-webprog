@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>이벤트 리스너 여러 개 등록하기</title>
+  <link rel="stylesheet" href="style_js.css">
+  <style>
+    body { text-align: center; }
+    #rotateImage { transition: transform 1s; }
+  </style>
+</head>
+<body>
+  <h4>마우스 커서를 이미지 위에 올렸다가 치워보세요</h4><hr>
+  <img id="rotateImage" src="../media/photo2.jpg">
+  <script>
+    let image = document.getElementById("rotateImage");
+    image.onmouseover = gone;
+    image.onmouseout = back;
+
+    function gone() {
+      image.style.transform = "scale(0, 0)";
+    } 
+    function back() {
+      image.style.transform = "scale(1, 1)";
+    } 
+  </script>
+</body>
+</html>

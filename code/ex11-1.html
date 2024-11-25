@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>캔버스 사용하기</title>
+</head>
+<body>
+  <canvas id="myCanvas" width="600" height="400"
+    style="border: 2px solid #cef"> </canvas>
+  <script>
+    const canvas = document.getElementById("myCanvas");   // 캔버스 만들기
+    const ctx = canvas.getContext("2d");		  // 2D 그래픽 사용하기
+    let x = 50;
+    let y = 50;
+    let dx = 2;
+    let dy = 2;
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);  // 화면 지우기
+      ctx.fillStyle = "blue";				 // 파란색으로 채우기
+      ctx.fillRect(x, y, 50, 50);      			 // 직사각형 만들기
+      x = x + dx;
+      y = y + dy;
+      if (x + 50 > canvas.width || x < 0)
+        dx = -dx;
+      if (y + 50 > canvas.height || y < 0)
+        dy = -dy;
+      requestAnimationFrame(draw);			 // 애니메이션 만들기
+    }
+    draw(); 
+  </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>문자열 회전시키기</title>
+  <link rel="stylesheet" href="style_js.css">
+</head>
+<body>
+  <script>
+    let text = new String("Programming");
+    let firstChar;
+
+    for (let i = 0; i <= text.length; i++) {
+      document.write(text + "<hr>");
+      firstChar = text[0];
+      text = text.slice(1) + firstChar;
+    };
+ </script>
+</body>
+</html>

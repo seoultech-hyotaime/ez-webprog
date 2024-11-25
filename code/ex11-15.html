@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>물방울 애니메이션 만들기</title>
+</head>
+<body>
+  <canvas id="myCanvas" width="800" height="500"
+    style="border: 2px solid #cef"> </canvas>
+  <script>
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+    let droplets = [];
+
+    function Droplet(x, y, radius, speed) {
+      this.x = x;
+      this.y = y;
+      this.radius = radius;
+      this.speed = speed;
+
+      this.draw = function () {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+          ctx.fillStyle = "rgba(0, 0, 255, 0.4)";
+          ctx.fill();
+        }
+        this.update = function () {
+          this.y = this.y - this.speed;
+          if (this.y + this.radius < 0) 
+            this.y = canvas.height + this.radius;
+        }
+    }
+    function createDroplet() {
+      let x = Math.random() * canvas.width;
+      let radius = Math.random() * 15 + 5; 
+      let speed = Math.random() * 4 + 1; 
+      return new Droplet(x, canvas.height + radius, radius, speed);
+    }
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < droplets.length; i++) {
+        droplets[i].update();
+        droplets[i].draw();
+      }
+      requestAnimationFrame(animate);
+    }
+
+    for (let i = 0; i < 50; i++) {
+      droplets.push(createDroplet());
+    }
+    animate();
+  </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>태그 선택자로 요소에 접근하기</title>
+  <link rel="stylesheet" href="style_js.css">
+<body>
+  <p class="elm">p class="elm" 1</p>
+  <p class="elm">p class="elm" 2</p>
+  <p>p & No class 1</p>
+  <p id="ide">p id="ide"</p><hr>
+  <script>
+    const dots = document.querySelectorAll(".elm"); 
+    for (let i = 0; i < dots.length; i++)
+      document.write(`dots[${i}] = ${dots[i].innerHTML}<br>`);
+    document.write("<hr>");
+    const hash = document.querySelectorAll("#ide"); 
+    for (let i = 0; i < hash.length; i++)
+      document.write(`hash[${i}] = ${hash[i].innerHTML}<br>`);
+  </script>
+</body>
+</html>

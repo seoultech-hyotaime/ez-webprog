@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>상대적 위치 지정하기</title>
+  <style>
+    img { border: 5px solid #8dc; }
+    div {
+      width: 500px;
+      height: 300px;
+      background: #ffe;
+      border: 1px solid #663;
+    }
+    .relative-img {
+      position: relative;
+      top: 50px;
+      left: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <img src="../../font/font_h.png">
+    <img src="../../font/font_t.png" class="relative-img">
+    <img src="../../font/font_m.png">
+    <img src="../../font/font_l.png" class="relative-img">
+  </div>
+  <h3>.relative-img: top 50px; left: 30px;</h3>
+</body>
+</html>

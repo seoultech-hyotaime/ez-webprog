@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .track {
+      width: 96%;
+      height: 30px;
+      background-color: #ded;
+      position: relative;
+      margin: 20px 0;
+      border-left: solid 5px #bbb;
+      border-right: solid 5px red;
+    }
+    .horse {
+      width: 30px;
+      height: 30px;
+      background-color: #ec9c55;
+      position: absolute;
+      top: 0;
+      border-radius: 0 10px 10px 0;
+    }
+    .number {
+      position: absolute;
+      color: white;
+      font-size: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  </style>
+</head>
+<body>
+  <div class="track" id="track1"></div>
+  <div class="track" id="track2"></div>
+  <div class="track" id="track3"></div>
+  <div class="track" id="track4"></div>
+  <div class="track" id="track5"></div>
+  <div class="track" id="track6"></div>
+  <div class="track" id="track7"></div>
+ 
+  <script>
+    const tracks = document.querySelectorAll(".track");
+    const numHorses = 7;
+    const finishLine = tracks[0].clientHeight - 30;
+
+    let finishedCount = 0;
+    let winner = null;
+
+    function moveHorse(horse, trackIndex) {
+      const distance = Math.random() * 10;
+      const currentLeft = parseFloat(horse.style.left);
+      const newLeft = currentLeft + distance;
+
+      horse.style.left = newLeft + "px";
+
+      if (newLeft >= (tracks[trackIndex].clientWidth - 28) && !winner) {
+        winner = horse;
+        horse.style.backgroundColor = "blue";
+        finishedCount++;
+
+        if (finishedCount === 1) {
+          clearInterval(gameInterval); 
+        }
+      }
+    }
+
+    const horses = [];
+
+    for (let i = 0; i < numHorses; i++) {
+      const horse = document.createElement("div");
+      horse.className = "horse";
+      horse.style.left = "0";
+
+      const number = document.createElement("div");
+      number.className = "number";
+      number.textContent = i + 1;
+      horse.appendChild(number);
+
+      tracks[i].appendChild(horse);
+      horses.push(horse);
+    }
+
+    const gameInterval = setInterval(() => {
+      for (let i = 0; i < numHorses; i++) {
+        moveHorse(horses[i], i);
+      }
+    }, 100);
+  </script>
+</body>
+</html>

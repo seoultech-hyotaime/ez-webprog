@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>history 객체 사용하기</title>
+  <link rel="stylesheet" href="style_js.css">
+</head>
+<body>
+  <h2>웹 브라우저 history 조작</h2><hr>
+  <button onclick="goBack()">뒤로 가기</button>
+  <button onclick="goForward()">앞으로 가기</button>
+  <button onclick="goToSpecificPage()">2페이지 앞으로 이동</button>
+  <script>
+    function goBack() {
+      history.back();
+    }
+    function goForward() {
+      history.forward();
+    }
+    function goToSpecificPage() {
+      history.go(2);      // 2페이지 앞으로 이동
+    }
+  </script>
+</body>
+</html>

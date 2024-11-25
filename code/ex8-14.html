@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>노드 삭제하기</title>
+  <link rel="stylesheet" href="style_js.css">
+</head>
+<body>
+  <div id="target">
+    <p id="p1">첫 번째 노드</p>
+    <p id="p2">두 번째 노드</p>
+    <p id="p3">세 번째 노드</p>
+  </div>
+  <button onClick="removeNode()">노드 지우기</button>
+  <script>
+    let num = 1;
+    function removeNode() {
+      const parent = document.getElementById("target");
+      const child = document.getElementById(`p${num}`);
+      parent.removeChild(child);
+      num++;
+    }
+  </script>
+</body>
+</html>

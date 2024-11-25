@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>mousedown과 mouseup 사용하기</title>
+  <link rel="stylesheet" href="style_js.css">
+  <style>
+    body { text-align: center; }
+    #largerImage { transition: transform 1s linear; }
+  </style>
+  <script>
+    window.onload = function() {
+      let image = document.getElementById("largerImage");
+      image.onmousedown = larger;
+      image.onmouseup = back;
+
+      function larger() {
+        image.style.transform = "scale(2, 2)";
+      } 
+      function back() {
+        image.style.transform = "scale(1, 1)";
+      } 
+    }
+  </script>
+</head>
+<body>
+  <h4>마우스 버튼을 누르고 유지하세요</h4><hr>
+  <img id="largerImage" src="../media/photo4.jpg" width="50%">
+</body>
+</html>

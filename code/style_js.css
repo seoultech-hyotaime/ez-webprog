@@ -1,0 +1,12 @@
+body {
+  font-family: consolas;
+  font-size: 20px;
+  color: #004;
+  padding: 20px;
+  border: 2px solid #cef;
+  border-radius: 15px;
+}
+
+hr {
+    border: 1px dotted #fea;
+}

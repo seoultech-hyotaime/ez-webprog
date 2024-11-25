@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>load 이벤트 사용하기</title>
+  <style>
+    body { text-align: center; }
+    #loadingImage { transition: transform 0.5s; }
+  </style>
+</head>
+<body>
+  <h4>페이지 로딩</h4>
+  <img id="loadingImage" src="../media/photo6.png">
+  <script>
+    const image = document.getElementById("loadingImage");
+    image.addEventListener("load", function () {
+      image.style.transform = "rotate(360deg)"
+    }); 
+  </script>
+</body>
+</html>

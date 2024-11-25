@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Array 객체의 메서드 사용하기</title>
+  <link rel="stylesheet" href="style_js.css">
+<body>
+  <script>
+    let a1 = [0, 1, 2, 3, 4];
+    let a2 = new Array(9, 8, 7, 6, 5);
+    document.write(`a1 = [${a1}]<br>`);
+    document.write(`a2 = [${a2}]<hr>`);
+
+    document.write(`a1.concat(a2) : ${a1.concat(a2)}<hr>`);
+    function gt(e) { return(e >= 7) };
+    document.write(`a2.filter(gt) : ${a2.filter(gt)}<hr>`);
+    document.write(`a2.indexOf(6) : ${a2.indexOf(6)}<hr>`);
+    a2.push(4);
+    document.write(`a2.push(4) : ${a2}<hr>`);
+    a2.pop();
+    document.write(`a2.pop() : ${a2}<hr>`);
+    document.write(`a1.reverse() : ${a1.reverse()}<hr>`);
+    a2.shift();
+    document.write(`a2.shift() : ${a2}<hr>`);
+    a2.unshift(9);
+    document.write(`a2.unshift(9) : ${a2}<hr>`);
+    document.write(`a2.slice(1,4) : ${a2.slice(1,4)}<hr>`);
+    document.write(`a2.sort() : ${a2.sort()}<hr>`);
+    document.write(`a2.join("+") : ${a2.join("+")}`);
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>이름 붙여서 grid 배치하기</title>
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr; 
+      grid-template-rows: auto; 
+      gap: 10px;
+      grid-template-areas:
+        "header header header"
+        "main main sidebar";
+    }
+    .item {
+      border: 2px solid #ccc;
+      border-radius: 3px;
+      text-align: center;
+      padding: 10px;
+    }
+    .header {
+      grid-area: header;
+      background-color: #fea;
+    }
+    .main {
+      grid-area: main;
+      background-color: #afb;
+    }
+    .sidebar {
+      grid-area: sidebar;
+      background-color: #cdf;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item header">Header</div>
+    <div class="item main">Main Content</div>
+    <div class="item sidebar">Sidebar</div>
+  </div>
+</body>
+</html>

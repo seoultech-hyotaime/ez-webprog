@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>screen 객체 정보 출력하기</title>
+  <link rel="stylesheet" href="style_js.css">
+</head>
+<body>
+  <h2>사용자의 화면 정보</h2><hr>
+  <p>화면 너비: <span id="width"></span>픽셀</p>
+  <p>화면 높이: <span id="height"></span>픽셀</p>
+  <p>사용 가능한 너비: <span id="availWidth"></span>픽셀</p>
+  <p>사용 가능한 높이: <span id="availHeight"></span>픽셀</p>
+  <p>색상 비트 수: <span id="colorDepth"></span>비트</p>
+  <script>
+    document.getElementById('width').innerText = screen.width;
+    document.getElementById('height').innerText = screen.height;
+    document.getElementById('availWidth').innerText = screen.availWidth;
+    document.getElementById('availHeight').innerText = screen.availHeight;
+    document.getElementById('colorDepth').innerText = screen.colorDepth;
+  </script>
+</body>
+</html>

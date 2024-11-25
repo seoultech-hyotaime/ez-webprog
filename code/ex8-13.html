@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>노드 추가하기</title>
+  <link rel="stylesheet" href="style_js.css">
+</head>
+<body>
+  <h3 id="target">사이트 추가하기</h3>
+  <input type="button" value="add" onClick="addNode('http://daum.net')">
+  <script>
+    function addNode(t) {
+      let node = document.createElement("a");  
+      node.href = t;
+      node.innerHTML = `<hr>${t}`;
+      document.getElementById("target").appendChild(node);
+    }
+  </script>
+</body>
+</html>

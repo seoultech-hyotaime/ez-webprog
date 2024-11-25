@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>호 그리기</title>
+</head>
+<body>
+  <canvas id="myCanvas" width="700" height="500"
+    style="border: 2px solid #cef"> </canvas>
+  <script>
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+    for (let i = 0.5; i <= 2; i = i + 0.5) {
+      ctx.beginPath();
+      ctx.arc(350, 250, i * 100, 0, Math.PI * i);
+      ctx.stroke();
+    } 
+  </script>
+</body>
+</html>

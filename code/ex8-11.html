@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>속성 변경하기</title>
+  <link rel="stylesheet" href="style_js.css">
+</head>
+<body style="text-align: center">
+    <img id="image" src="../media/photo1.jpg"><br>
+    <input type="button" value="Change" onClick="changeImage()" >
+    <script>
+      let toggle = 1;
+      function changeImage() {
+        if (++toggle % 2 == 0)
+          document.getElementById("image").src = "../media/photo2.jpg";
+        else
+          document.getElementById("image").src = "../media/photo1.jpg";
+      }
+  </script>
+</body>
+</html>

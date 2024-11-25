@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>주기적으로 실행하기</title>
+  <link rel="stylesheet" href="style_js.css">
+</head>
+<body style="text-align: center">
+  <h2>현재 시각</h2><hr>
+  <h1 id="clock">00:00:00</h1>
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const hours = now.getHours().toString().padStart(2, '0');
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      const seconds = now.getSeconds().toString().padStart(2, '0');
+      const clockElement = document.getElementById('clock');
+      clockElement.textContent = `${hours}:${minutes}:${seconds}`
+    }
+    setInterval(updateClock, 1000);
+  </script>
+</body>
+</html>

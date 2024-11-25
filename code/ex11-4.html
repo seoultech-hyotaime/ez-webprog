@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>다각형 그리기</title>
+</head>
+<body>
+  <canvas id="myCanvas" width="700" height="500"
+    style="border: 2px solid #cef"> </canvas>
+  <script>
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+    function drawPolygon(px, py, length, sides) {
+      ctx.beginPath();
+      for (let i = 0; i < sides; i++) {
+        ctx.lineTo(px, py); 
+        let angle = (i * 2 * Math.PI) / sides;
+        px = px + length * Math.cos(angle);
+        py = py + length * Math.sin(angle);
+      }
+      ctx.closePath();
+      ctx.stroke();
+    }
+    function draw() {
+      for (let k = 3; k <= 12; k++)
+        drawPolygon(300, 10, 120, k);
+    }
+    draw(); 
+  </script>
+</body>
+</html>

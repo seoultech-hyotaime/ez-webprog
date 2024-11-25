@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>시스템 날짜 출력하기</title>
+  <link rel="stylesheet" href="style_js.css">
+<body>
+  <script>
+    let today = new Date();
+    const day = "일월화수목금토";
+    document.write(today + "<hr>");
+    document.write(today.toLocaleString() + "<hr>");
+    document.write(today.getFullYear() + "년<hr>");
+    document.write(today.getMonth() + 1 + "월<hr>");
+    document.write(today.getDate() + "일<hr>");
+    document.write(day[today.getDay()] + "요일<hr>");
+    document.write(today.getHours() + "시<hr>");
+    document.write(today.getMinutes() + "분<hr>");
+    document.write(today.getSeconds() + "초");
+  </script>
+</body>
+</html>

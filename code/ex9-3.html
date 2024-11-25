@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>이벤트 객체와 매개변수(mousemove)</title>
+  <style>
+    body { overflow: hidden; }
+    #followMouse { transition: transform 1s linear; }
+  </style>
+</head>
+<body>
+  <img id="followMouse" src="../media/photo3.png">
+  <script>
+    let image = document.getElementById("followMouse");
+    document.onmousemove = updateImage;
+
+    function updateImage(event) {
+      const X = event.clientX;
+      const Y = event.clientY;
+      image.style.transform = `translate(${X}px, ${Y}px)`;
+    }
+  </script>
+</body>
+</html>

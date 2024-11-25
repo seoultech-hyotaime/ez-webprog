@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>prompt()로 사용자 입력받기</title>
+  <link rel="stylesheet" href="style_js.css">
+<body>
+  <script>
+    let num, add;
+    num = prompt("숫자를 입력하세요");
+    document.write("num: " + num + "<hr>");
+    add = num + 22;
+    document.write("num + 22: " + add + "<hr>");
+    num = parseInt(num);
+    add = num + 22;
+    document.write("parseInt + 22: " + add);
+  </script>
+</body>
+</html>

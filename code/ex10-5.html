@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>시간 조절하기</title>
+  <link rel="stylesheet" href="style_js.css">
+</head>
+<body style="text-align: center">
+  <button onclick="showImage()">1초 후 이미지 보기</button>
+  <div id="cont" style="display: none"><img src="../media/photo1.jpg"></div>
+  <script>
+    function showImage() {
+       window.setTimeout(function() {
+         document.getElementById("cont").style.display = "block";
+      }, 1000);
+    }
+  </script>
+</body>
+</html>

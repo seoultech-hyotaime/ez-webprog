@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>스타일 변경하기</title>
+  <link rel="stylesheet" href="style_js.css">
+</head>
+<body>
+  <div id="box" style="width: 300px; height: 300px; margin: auto"></div>
+  <script>
+    const letters = "0123456789ABCDEF";
+    let color = "#";
+    let count = 1;
+    let intervalID = setInterval(changeColor, 250);
+
+    function changeColor() {
+      if (++count > 50) 
+        clearInterval(intervalID);
+      for (let k = 0; k < 6; k++) 
+        color = color + letters[Math.floor(Math.random() * 16)];
+      document.getElementById("box").style.backgroundColor = color;
+      document.getElementById("box").style.borderRadius = `${count}%`;
+      color = "#";                              // 16진수 문자열 초기화
+    }
+  </script>
+</body>
+</html>

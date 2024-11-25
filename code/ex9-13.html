@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>submit와 reset 이벤트 사용하기</title>
+  <link rel="stylesheet" href="style_js.css">
+  <style>
+    body, form { text-align: center; }
+    #result { color: #933; }
+  </style>
+</head>
+<body>
+  <div>
+    <form id="myForm">
+      <label for="message">입력하세요:</label>
+      <input type="text" id="message" name="message"><br>
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+    </form>
+  </div><hr>
+  <div id="result"></div>
+  <script>
+    let form = document.getElementById("myForm");
+    let resultDiv = document.getElementById("result");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();        // 폼의 기본 동작을 막음
+      let messageInput = document.getElementById("message");
+      let message = messageInput.value;
+      resultDiv.innerText = "You typed: " + message;
+    });
+    form.addEventListener("reset", function() {
+      resultDiv.innerText = "Form reset!";
+    });
+  </script>
+</body>
+</html>

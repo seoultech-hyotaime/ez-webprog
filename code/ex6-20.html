@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>전역변수와 지역변수 차이 알아보기</title>
+  <link rel="stylesheet" href="style_js.css">
+<body>
+  <script>
+    let gb = "전역"; 
+    function test() {
+      let lo = "지역";
+      document.write("함수 안 gb = " + gb + "<hr>");
+      document.write("함수 안 lo = " + lo + "<hr>");
+    }   
+    test();
+    document.write("함수 바깥 gb = " + gb + "<hr>");
+    document.write("함수 바깥 lo = " + lo + "<hr>");
+  </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>박스 크기 조절하기</title>
+  <style>
+    .container {
+      display: flex;
+      padding: 10px;
+      border: 1px dashed #69f;
+      margin: 10px;
+    }
+    .flex_box {
+      background: #ffe;
+      padding: 5px;
+      border: 1px solid #9cc;
+    } 
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="flex_box" style="flex: auto">
+      <img src="../media/france5.jpg" height="80px" style="float: left" > 
+      <b>(flex: auto)</b> The Eiffel Tower is a wrought-iron lattice tower on
+ the Champ de Mars in Paris, France. Constructed from 1887, it is named after
+ the engineer Gustave Eiffel. Locally nicknamed "La dame de fer" (French for
+ "Iron Lady").</div>
+    <div class="flex_box" style="flex: auto">
+      <img src="../media/france3.jpg" height="80px" style="float: right" > 
+      <b>(flex: auto)</b> The Eiffel Tower is a wrought-iron lattice tower on
+ the Champ de Mars in Paris, France. Constructed from 1887, it is named after
+ the engineer Gustave Eiffel.</div>
+  </div>
+  <div class="container"> 
+    <div class="flex_box" style="flex: 1">
+      <img src="../media/france5.jpg" height="80px" style="float: left" > 
+      <b>(flex: 1)</b> The Eiffel Tower is a wrought-iron lattice tower on the
+ Champ de Mars in Paris, France. Constructed from 1887, it is named after the
+ engineer Gustave Eiffel. Locally nicknamed "La dame de fer" (French for "Iron
+ Lady").</div>
+    <div class="flex_box" style="flex: 1">
+      <img src="../media/france3.jpg" height="80px" style="float: right" > 
+      <b>(flex: 1)</b> The Eiffel Tower is a wrought-iron lattice tower on the
+ Champ de Mars in Paris, France. Constructed from 1887, it is named after the
+ engineer Gustave Eiffel.</div>
+  </div>
+</body>
+</html>

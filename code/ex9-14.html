@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>change 이벤트 사용하기</title>
+  <link rel="stylesheet" href="style_js.css">
+  <style>
+    body, form { text-align: center; }
+    #result { color: #933; }
+  </style>
+</head>
+<body>
+  <div>
+    <label for="selectBox">가장 좋아하는 과일은?:</label>
+    <select id="selectBox">
+      <option value="사과">사과</option>
+      <option value="바나나">바나나</option>
+      <option value="망고">망고</option>
+    </select>
+  </div><hr>
+  <div id="result"></div>
+  <script>
+    let selectBox = document.getElementById("selectBox");
+    let resultDiv = document.getElementById("result");
+
+    selectBox.addEventListener("change", function() {
+      let select = selectBox.options[selectBox.selectedIndex].value;
+      resultDiv.innerText = "좋아하는 과일은: " + select;
+    }); 
+  </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>@media와 반응형 grid</title>
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr; 
+      grid-template-rows: auto; 
+      gap: 10px;
+      grid-template-areas:
+        "header header header"
+        "main main sidebar";
+    }
+    .item {
+      border: 2px solid #ccc;
+      border-radius: 3px;
+      text-align: center;
+      padding: 10px;
+    }
+    .header {
+      grid-area: header;
+      background-color: #fea;
+    }
+    .main {
+      grid-area: main;
+      background-color: #afb;
+    }
+    .sidebar {
+      grid-area: sidebar;
+      background-color: #cdf;
+    }
+    @media (max-width: 600px) {
+      .container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "header"
+          "main"
+          "sidebar";
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item header">Header</div>
+    <div class="item main">Main Content</div>
+    <div class="item sidebar">Sidebar</div>
+  </div>
+</body>
+</html>

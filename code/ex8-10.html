@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>문자열 회전시키기</title>
+  <link rel="stylesheet" href="style_js.css">
+  <style>
+    #rotate {
+      font-size: 40px;
+      color: blue;
+    }
+  </style>
+</head>
+<body style="text-align: center">
+  <h1 id="rotate">Programming</h1>
+  <script>
+    const rotate = document.getElementById("rotate");    
+    function rotateString() {
+      const text = rotate.textContent;
+      const firstChar = text[0];
+      const rotatedText = text.slice(1) + firstChar;
+      rotate.textContent = rotatedText;
+    };
+    setInterval(rotateString, 500); // 500ms마다 문자열을 회전
+  </script>
+</body>
+</html>

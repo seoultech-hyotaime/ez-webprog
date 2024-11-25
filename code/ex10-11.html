@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>navigator 객체 정보 출력하기</title>
+  <link rel="stylesheet" href="style_js.css">
+</head>
+<body>
+  <h2>웹 브라우저 정보</h2><hr>
+  <p>사용자 에이전트: <span id="userAgent"></span></p>
+  <p>웹 브라우저 제조사: <span id="vendor"></span></p>
+  <p>웹 브라우저 이름: <span id="appName"></span></p>
+  <p>웹 브라우저 버전: <span id="appVersion"></span></p>
+  <p>운영 체제 플랫폼: <span id="platform"></span></p>
+  <script>
+    document.getElementById('userAgent').innerText = navigator.userAgent;
+    document.getElementById('vendor').innerText = navigator.vendor;
+    document.getElementById('appName').innerText = navigator.appName;
+    document.getElementById('appVersion').innerText = navigator.appVersion;
+    document.getElementById('platform').innerText = navigator.platform;
+  </script>
+</body>
+</html>

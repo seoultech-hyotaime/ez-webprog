@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>윈도우 열기</title>
+  <link rel="stylesheet" href="style_js.css">
+  <style>
+    a { text-decoration-line: none; }
+   </style>
+</head>
+<body>
+  <a href="#" onclick="openWin()">누르면 새 창이 열립니다.</a><hr>
+  <script>
+     function openWin() {
+      let nw = open("", "_blank", "width=700, height=400, left=10, top=10");
+      document.write("<h2>새로운 창이 열렸음</h2>");
+      nw.document.write("<h2>여기는 새 창</h2>");
+    } 
+  </script>
+</body>
+</html>

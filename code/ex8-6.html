@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>체크박스에서 값 읽기</title>
+  <link rel="stylesheet" href="style_js.css">
+</head>
+<body>
+  <input type="checkbox" id="myCheckbox"> 다음 단계 진행 확인!<br>
+  <input type="button" value="process" onClick="getCheckbox()"><hr>
+  <p id="result"></p>
+  <script>
+    function getCheckbox() {
+      if (document.getElementById("myCheckbox").checked == true)
+        document.getElementById("result").innerHTML="작업을 진행하겠습니다.";
+      else
+        document.getElementById("result").innerHTML="사용자의 요구로 중단!";
+    }
+  </script>
+</body>
+</html>

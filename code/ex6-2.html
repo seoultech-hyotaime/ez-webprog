@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>var, let, const로 변수 만들기</title>
+  <link rel="stylesheet" href="style_js.css">
+<body>
+  <script>
+    // var는 자바스크립트 초기방식
+    var varNum = 1;
+    varNum = varNum + 10;
+    document.write("varNum = "+ varNum + "<hr>");
+    // let은 같은 이름의 변수 다시 만들 수 없음
+    let letNum = "hello";
+    letNum = letNum + varNum;
+    document.write("letNum = "+ letNum + "<hr>");
+    // const는 값을 바꿀 수 없음
+    const pi = 3.14;
+    document.write("pi = " + pi);
+  </script>
+</body>
+</html>
