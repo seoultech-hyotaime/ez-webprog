@@ -11,21 +11,63 @@
     <h1 class="page-title">쉽게 하는 웹 프로그래밍</h1>
     <p class="page-description">미라클 HTML5+CSS3+자바스크립트의 학습을 위한 웹 페이지입니다.</p>
 </header>
-<div class="page-body">
-    <ul class="chapter-list">
-        <li><a href="./html/ch01.html">Chapter 01: HTML, CSS, JS</a></li>
-        <li><a href="./html/ch02.html">Chapter 02: HTML5로 기본 문서 만들기</a></li>
-        <li><a href="./html/ch03.html">Chapter 03: 문서 구조화와 웹 폼</a></li>
-        <li><a href="./html/ch04.html">Chapter 04: CSS로 웹 페이지 꾸미기</a></li>
-        <li><a href="./html/ch05.html">Chapter 05: CSS의 고급 기능</a></li>
-        <li><a href="./html/ch06.html">Chapter 06: 자바스크립트와 ES6</a></li>
-        <li><a href="./html/ch07.html">Chapter 07: 자바스크립트 객체 다루기</a></li>
-        <li><a href="./html/ch08.html">Chapter 08: 문서 객체 모델</a></li>
-        <li><a href="./html/ch09.html">Chapter 09: 이벤트 처리하기</a></li>
-        <li><a href="./html/ch10.html">Chapter 10: 브라우저 객체모델과 반응형 웹</a></li>
-        <li><a href="./html/ch11.html">Chapter 11: 캔버스로 그림 그리기</a></li>
-        <li><a href="./html/ch12.html">Chapter 12: 도전! 프로젝트</a></li>
-    </ul>
+<div class="page-container">
+    <!-- 날씨 정보 -->
+    <div class="weather-widget">
+        <h2>현재 날씨</h2>
+        <p id="weather-location">위치를 가져오는 중...</p>
+        <p id="weather-description">날씨 정보를 가져오는 중...</p>
+        <p id="weather-temp"></p>
+        <h3>웹 프로그래밍 공부하기 좋은 날이네요!</h3>
+        <br>
+        <p>Open Weather API</p>
+        <a href="https://openweathermap.org/">openweathermap.org</a>
+    </div>
+    <!-- 목차 -->
+    <div class="page-body">
+        <ul class="chapter-list">
+            <li><a href="./html/ch01.html">Chapter 01: HTML, CSS, JS</a></li>
+            <li><a href="./html/ch02.html">Chapter 02: HTML5로 기본 문서 만들기</a></li>
+            <li><a href="./html/ch03.html">Chapter 03: 문서 구조화와 웹 폼</a></li>
+            <li><a href="./html/ch04.html">Chapter 04: CSS로 웹 페이지 꾸미기</a></li>
+            <li><a href="./html/ch05.html">Chapter 05: CSS의 고급 기능</a></li>
+            <li><a href="./html/ch06.html">Chapter 06: 자바스크립트와 ES6</a></li>
+            <li><a href="./html/ch07.html">Chapter 07: 자바스크립트 객체 다루기</a></li>
+            <li><a href="./html/ch08.html">Chapter 08: 문서 객체 모델</a></li>
+            <li><a href="./html/ch09.html">Chapter 09: 이벤트 처리하기</a></li>
+            <li><a href="./html/ch10.html">Chapter 10: 브라우저 객체모델과 반응형 웹</a></li>
+            <li><a href="./html/ch11.html">Chapter 11: 캔버스로 그림 그리기</a></li>
+            <li><a href="./html/ch12.html">Chapter 12: 도전! 프로젝트</a></li>
+        </ul>
+    </div>
 </div>
+
+<!--<script src="weather.js"></script>-->
+<script>
+    const apiKey = 'API_KEY'; // OpenWeather API Key
+    const weatherLocation = document.getElementById('weather-location');
+    const weatherDescription = document.getElementById('weather-description');
+    const weatherTemp = document.getElementById('weather-temp');
+
+    // 사용자의 위치 정보를 가져옵니다.
+    navigator.geolocation.getCurrentPosition(async (position) => {
+        const {latitude, longitude} = position.coords;
+        const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&lang=kr&appid=${apiKey}`;
+
+        try {
+            const response = await fetch(weatherApiUrl);
+            const data = await response.json();
+
+            // 날씨 정보를 페이지에 업데이트
+            weatherLocation.textContent = `${data.name}, ${data.sys.country}`;
+            weatherDescription.textContent = `${data.weather[0].description}`;
+            weatherTemp.textContent = `현재 온도: ${data.main.temp}°C`;
+        } catch (error) {
+            weatherDescription.textContent = '날씨 정보를 불러오는 데 실패했습니다.';
+        }
+    }, () => {
+        weatherDescription.textContent = '위치 권한이 필요합니다.';
+    });
+</script>
 </body>
 </html>
