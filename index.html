@@ -13,7 +13,8 @@
 </header>
 <div class="page-container">
     <!-- 날씨 정보 -->
-    <div class="weather-widget">
+    <div class="weather-widget" id="weather-widget">
+        <button id="weather-off-btn" style="margin-bottom: 20px;">날씨 창 끄기</button>
         <h2>현재 날씨</h2>
         <p id="weather-location">위치를 가져오는 중...</p>
         <p id="weather-description">날씨 정보를 가져오는 중...</p>
@@ -23,6 +24,7 @@
         <p>Open Weather API</p>
         <a href="https://openweathermap.org/">openweathermap.org</a>
     </div>
+    <div class="left-body"></div>
     <!-- 목차 -->
     <div class="page-body">
         <ul class="chapter-list">
@@ -40,14 +42,30 @@
             <li><a href="./html/ch12.html">Chapter 12: 도전! 프로젝트</a></li>
         </ul>
     </div>
+    <div class="right-body">
+        <button id="weather-on-btn" style="margin-bottom: 20px;">날씨 창 켜기</button>
+    </div>
 </div>
 
 <!--<script src="weather.js"></script>-->
 <script>
-    const apiKey = 'API_KEY'; // OpenWeather API Key
+    const apiKey = 'API_KEY'; // OpenWeather API Key: d61cf8c8ecd789a76e43059164c2e3d3
     const weatherLocation = document.getElementById('weather-location');
     const weatherDescription = document.getElementById('weather-description');
     const weatherTemp = document.getElementById('weather-temp');
+    const weatherWidget = document.getElementById('weather-widget');
+    const weatherOnBtn = document.getElementById('weather-on-btn');
+    const weatherOffBtn = document.getElementById('weather-off-btn');
+
+
+    // 날씨 창 토글 기능
+    weatherOnBtn.addEventListener('click', () => {
+        weatherWidget.classList.toggle('hidden');
+    });
+    weatherOffBtn.addEventListener('click', () => {
+        weatherWidget.classList.toggle('hidden');
+    });
+
 
     // 사용자의 위치 정보를 가져옵니다.
     navigator.geolocation.getCurrentPosition(async (position) => {
