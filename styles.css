@@ -76,7 +76,7 @@ body {
 
 /* 날씨 위젯 스타일 */
 .weather-widget {
-    flex: 1;
+    width: 19%;
     background: #f8f9fa;
     border: 1px solid #ddd;
     right: 0;
@@ -86,6 +86,7 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
     position: fixed;
+    z-index: 1;
 }
 
 .weather-widget h2 {
@@ -98,6 +99,57 @@ body {
     font-size: 1rem;
 }
 
+.weather-widget button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #B5651D;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
 .hidden {
     display: none;
+}
+
+.left-body {
+    flex: 1;
+}
+
+.right-body {
+    flex: 1;
+}
+
+.book-info {
+    width: 19%;
+    left: 0;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    height: 73vh;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: fixed;
+}
+
+.weather-toggle {
+    width: 107%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-toggle button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #B5651D;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }

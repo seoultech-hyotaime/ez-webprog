@@ -12,19 +12,13 @@
     <p class="page-description">미라클 HTML5+CSS3+자바스크립트의 학습을 위한 웹 페이지입니다.</p>
 </header>
 <div class="page-container">
-    <!-- 날씨 정보 -->
-    <div class="weather-widget" id="weather-widget">
-        <button id="weather-off-btn" style="margin-bottom: 20px;">날씨 창 끄기</button>
-        <h2>현재 날씨</h2>
-        <p id="weather-location">위치를 가져오는 중...</p>
-        <p id="weather-description">날씨 정보를 가져오는 중...</p>
-        <p id="weather-temp"></p>
-        <h3>웹 프로그래밍 공부하기 좋은 날이네요!</h3>
-        <br>
-        <p>Open Weather API</p>
-        <a href="https://openweathermap.org/">openweathermap.org</a>
+    <div class="left-body">
+        <div class="book-info">
+            <iframe src="https://library.seoultech.ac.kr/#/search/detail/958174" title="SeoulTech Library" width="100%"
+                    height="100%"></iframe>
+            <!--            <iframe src="https://product.kyobobook.co.kr/detail/S000213770094" title="Kyobo Product"></iframe>-->
+        </div>
     </div>
-    <div class="left-body"></div>
     <!-- 목차 -->
     <div class="page-body">
         <ul class="chapter-list">
@@ -43,8 +37,23 @@
         </ul>
     </div>
     <div class="right-body">
-        <button id="weather-on-btn" style="margin-bottom: 20px;">날씨 창 켜기</button>
+        <div class="weather-widget" id="weather-widget">
+            <button id="weather-off-btn" style="margin-bottom: 20px;">날씨 창 끄기</button>
+            <h2>현재 날씨</h2>
+            <p id="weather-location">위치를 가져오는 중...</p>
+            <p id="weather-description">날씨 정보를 가져오는 중...</p>
+            <p id="weather-temp"></p>
+            <h3>웹 프로그래밍 공부하기 좋은 날이네요!</h3>
+            <br>
+            <p>Open Weather API</p>
+            <a href="https://openweathermap.org/">openweathermap.org</a>
+        </div>
+        <div class="weather-toggle">
+            <button id="weather-on-btn" style="margin-bottom: 20px; position: fixed;">날씨 창 켜기</button>
+        </div>
     </div>
+    <!-- 날씨 정보 -->
+
 </div>
 
 <!--<script src="weather.js"></script>-->
