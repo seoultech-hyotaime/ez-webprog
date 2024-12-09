@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>쉽게 하는 웹 프로그래밍</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="./javascript/weather.js"></script>
 </head>
 <body>
 <header class="header">
@@ -37,6 +38,7 @@
         </ul>
     </div>
     <div class="right-body">
+        <!-- 날씨 정보 -->
         <div class="weather-widget" id="weather-widget">
             <button id="weather-off-btn" style="margin-bottom: 20px;">날씨 창 끄기</button>
             <h2>현재 날씨</h2>
@@ -52,49 +54,6 @@
             <button id="weather-on-btn" style="margin-bottom: 20px; position: fixed;">날씨 창 켜기</button>
         </div>
     </div>
-    <!-- 날씨 정보 -->
-
 </div>
-
-<!--<script src="weather.js"></script>-->
-<script>
-    const apiKey = 'API_KEY'; // OpenWeather API Key: d61cf8c8ecd789a76e43059164c2e3d3
-    const weatherLocation = document.getElementById('weather-location');
-    const weatherDescription = document.getElementById('weather-description');
-    const weatherTemp = document.getElementById('weather-temp');
-    const weatherWidget = document.getElementById('weather-widget');
-    const weatherOnBtn = document.getElementById('weather-on-btn');
-    const weatherOffBtn = document.getElementById('weather-off-btn');
-
-
-    // 날씨 창 토글 기능
-    weatherOnBtn.addEventListener('click', () => {
-        weatherWidget.classList.toggle('hidden');
-    });
-    weatherOffBtn.addEventListener('click', () => {
-        weatherWidget.classList.toggle('hidden');
-    });
-
-
-    // 사용자의 위치 정보를 가져옵니다.
-    navigator.geolocation.getCurrentPosition(async (position) => {
-        const {latitude, longitude} = position.coords;
-        const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&lang=kr&appid=${apiKey}`;
-
-        try {
-            const response = await fetch(weatherApiUrl);
-            const data = await response.json();
-
-            // 날씨 정보를 페이지에 업데이트
-            weatherLocation.textContent = `${data.name}, ${data.sys.country}`;
-            weatherDescription.textContent = `${data.weather[0].description}`;
-            weatherTemp.textContent = `현재 온도: ${data.main.temp}°C`;
-        } catch (error) {
-            weatherDescription.textContent = '날씨 정보를 불러오는 데 실패했습니다.';
-        }
-    }, () => {
-        weatherDescription.textContent = '위치 권한이 필요합니다.';
-    });
-</script>
 </body>
 </html>
