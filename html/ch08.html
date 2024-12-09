@@ -22,15 +22,6 @@
     <!-- 왼쪽: 노트 영역 -->
     <div class="note-section">
         <h1>문서 객체 모델</h1>
-        <button class="load-code" data-file="../code/ex8-1.html">예제 8-1</button>
-        <button class="load-code" data-file="../code/ex8-2.html">예제 8-2</button>
-        <button class="load-code" data-file="../code/ex8-3.html">예제 8-3</button>
-        <button class="load-code" data-file="../code/ex8-4.html">예제 8-4</button>
-        <button class="load-code" data-file="../code/ex8-5.html">예제 8-5</button>
-        <button class="load-code" data-file="../code/ex8-6.html">예제 8-6</button>
-        <button class="load-code" data-file="../code/ex8-7.html">예제 8-7</button>
-        <button class="load-code" data-file="../code/ex8-8.html">예제 8-8</button>
-        <button class="load-code" data-file="../code/ex8-9.html">예제 8-9</button>
         <h2>문서 객체 모델 이해하기</h2>
         <h3>문서 객체 모델</h3>
         <p>DOM: Document Object Model</p>
@@ -40,14 +31,8 @@
         <h3>웹 시스템 관련 객체</h3>
         <ul>
             <li>Array, String, Math, Date 객체</li>
-        </ul>
-        <ul>
             <li>문서 객체모델의 객체</li>
-        </ul>
-        <ul>
             <li>브라우저 객체모델의 객체</li>
-        </ul>
-        <ul>
             <li>이벤트 객체</li>
         </ul>
         <h3>공통 CSS 파일</h3>
@@ -60,32 +45,29 @@
         <ul>
             <li><code>document.getElementById(&quot;id&quot;)</code></li>
         </ul>
+        <button class="load-code" data-file="../code/ex8-1.html">예제 8-1</button>
         <h3>요소 여러 개에 접근하기</h3>
         <ul>
             <li><code>document.getElementsByClass(&quot;class&quot;)</code></li>
-        </ul>
-        <ul>
             <li><code>document.getElementsByTagName(&quot;tag&quot;)</code></li>
-        </ul>
-        <ul>
             <li><code>document.getElementsByName(&quot;name&quot;)</code></li>
         </ul>
+        <button class="load-code" data-file="../code/ex8-2.html">예제 8-2</button>
         <h3>태그 선택자로 요소에 접근하기</h3>
         <ul>
             <li><code>document.querySelectorAll(&quot;s&quot;)</code>: s 태그 선택자를 사용하여 요소에 접
             </li>
-        </ul>
-        <ul>
+
             <li>#a -&gt; id a</li>
-        </ul>
-        <ul>
+
             <li>.b - class b</li>
-        </ul>
-        <ul>
+
             <li>c -&gt; tag c</li>
         </ul>
+        <button class="load-code" data-file="../code/ex8-3.html">예제 8-3</button>
         <h3>HTML 요소에서 값 가져오기</h3>
         <h3>웹 폼 태그의 문자열 읽기</h3>
+        <button class="load-code" data-file="../code/ex8-4.html">예제 8-4</button>
         <p>input 태그의 값 읽기</p>
         <pre class="code"><code class="language-JavaScript">const id1 = document.myform.userId;alert(`${id1.value}님 환영합니다`)</code></pre>
         <pre class="code"><code class="language-JavaScript">const id = document.getElementsByName(&quot;userId&quot;);const pw = document.getElementsByName(&quot;passwd&quot;);if (pw[0].value.length &lt;= 4) {
@@ -96,10 +78,12 @@
         <p>innerHTML과 outerHTML의 차이</p>
         <p><code>outerHTML{&lt;div&gt;innerHTML&lt;/div&gt;}</code>
         </p>
+        <button class="load-code" data-file="../code/ex8-5.html">예제 8-5</button>
         <p>체크박스에서 값 읽기</p>
         <pre class="code"><code class="language-JavaScript">function getCheckBox() {
   if (document.getElementById(&quot;myCheckBox&quot;).checked == true)
     document.getElementById(&quot;result&quot;).innerHTML = &quot;작업을 진행하겠습니다.&quot;;  else    document.getElementById(&quot;result&quot;).innerHTML = &quot;사용자의 요구로 중단!&quot;;}</code></pre>
+        <button class="load-code" data-file="../code/ex8-6.html">예제 8-6</button>
         <p>체크박스 값 여러 개 읽기</p>
         <pre class="code"><code class="language-JavaScript">function getCheckBox() {
   let sum = 0;  const adds = document.getElementsByName(&quot;myAdd&quot;);  for (let i = 0; i &lt; adds.length; i++) {
@@ -107,6 +91,7 @@
       sum = sum + parseInt(adds[i].value);    }
   }
   document.getElementById(&quot;result&quot;).innerHTML = `추가 금액: ${sum}원`}</code></pre>
+        <button class="load-code" data-file="../code/ex8-7.html">예제 8-7</button>
         <p>라디오 버튼에서 값 읽기</p>
         <pre class="code"><code class="language-JavaScript">function getRadio() {
   const choice = document.querySelectorAll(&quot;[type=&#x27;radio&#x27;]&quot;);  for (let i = 0; i &lt; choice.length; i++) {
@@ -114,32 +99,26 @@
       document.getElementById(&quot;result&quot;).innerHTML = `${choice[i].value}`;      break;    }
   }
 }</code></pre>
+        <button class="load-code" data-file="../code/ex8-8.html">예제 8-8</button>
         <p>드롭박스에서 값 읽기</p>
         <pre class="code"><code class="language-JavaScript">function getSelect() {
   const index = document.getElementById(&quot;myOption&quot;).selectedIndex;  const st = document.getElementById(&quot;myOption&quot;).options[index].value;  document.getElementById(&quot;result&quot;).innerHTML = st;}</code></pre>
+        <button class="load-code" data-file="../code/ex8-9.html">예제 8-9</button>
         <h3>HTML 요소 변경하기</h3>
         <h3>내용 변경하기</h3>
         <ul>
             <li>텍스트 출력 메서드
                 <ul>
                     <li><code>document.write()</code>: html페이지를 새로 만들고 글자를 출력</li>
-                </ul>
-                <ul>
                     <li><code>document.writeln()</code>: 글자 끝에 줄바꿈 문자를 추가하여 출력</li>
                 </ul>
             </li>
-        </ul>
-        <ul>
             <li>문자 노드에 접근하는 속성
                 <ul>
                     <li><code>innerHTML</code>: HTML 태그 요소를 직접 변경, 태그 인식 가능</li>
-                </ul>
-                <ul>
                     <li><code>innerText</code>: HTML이 적용된 상태로 불러옴. <code>display:
                         none</code>은 불러올 수 없음
                     </li>
-                </ul>
-                <ul>
                     <li><code>textContent</code>: HTML을 제외한 모든 문자를 불러옴. <code>display:
                         none</code>의 문자도 가져옴
                     </li>
@@ -157,15 +136,15 @@
             <li><code>createElement(&quot;tag&quot;)</code>: <code>&lt;tag&gt;</code> 노드를
                 생성한다
             </li>
-        </ul>
-        <ul>
             <li><code>appendChild(node)</code>: 부모 노드에 node를 추가한다</li>
         </ul>
+        <button class="load-code" data-file="../code/ex8-13.html">예제 8-13</button>
+        <h3>노드 삭제하기</h3>
         <ul>
             <li><code>removeChild(node)</code>: 부모 노드에 node를 삭제한다</li>
         </ul>
-        <button class="load-code" data-file="../code/ex8-13.html">예제 8-13</button>
         <button class="load-code" data-file="../code/ex8-14.html">예제 8-14</button>
+        <h3>테이블 요소 추가하기</h3>
         <button class="load-code" data-file="../code/ex8-15.html">예제 8-15</button>
     </div>
     <!-- 오른쪽: 실습 영역 -->
