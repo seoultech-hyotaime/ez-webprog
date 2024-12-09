@@ -1,0 +1,20 @@
+body, textarea, table, td {
+  font-family: consolas;
+  font-size: 20px;
+  color: #004;
+  padding: 12px 25px;
+  border: 2px solid #cef;
+  border-radius: 15px;
+  margin: 10px;
+}
+
+input, select, button {
+  font-size: 16px;
+  color: #004;
+  padding: 5px 10px;
+  margin: 10px;
+}
+
+hr {
+    border: 1px dotted #fea;
+}
