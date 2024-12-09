@@ -20,53 +20,55 @@
     <!-- 왼쪽: 노트 영역 -->
     <div class="note-section">
         <h1>이벤트 처리하기</h1>
-        <button class="load-code" data-file="../code/ex9-1.html">예제 9-1</button>
-        <button class="load-code" data-file="../code/ex9-2.html">예제 9-2</button>
-        <button class="load-code" data-file="../code/ex9-3.html">예제 9-3</button>
-        <button class="load-code" data-file="../code/ex9-4.html">예제 9-4</button>
-        <button class="load-code" data-file="../code/ex9-5.html">예제 9-5</button>
-        <button class="load-code" data-file="../code/ex9-6.html">예제 9-6</button>
-        <button class="load-code" data-file="../code/ex9-7.html">예제 9-7</button>
-        <button class="load-code" data-file="../code/ex9-8.html">예제 9-8</button>
-        <button class="load-code" data-file="../code/ex9-9.html">예제 9-9</button>
-        <button class="load-code" data-file="../code/ex9-10.html">예제 9-10</button>
-        <button class="load-code" data-file="../code/ex9-11.html">예제 9-11</button>
-        <button class="load-code" data-file="../code/ex9-12.html">예제 9-12</button>
-        <button class="load-code" data-file="../code/ex9-13.html">예제 9-13</button>
-        <button class="load-code" data-file="../code/ex9-14.html">예제 9-14</button>
-        <button class="load-code" data-file="../code/ex9-15.html">예제 9-15</button>
-        <h1>이벤트 처리하기</h1>
         <h2>이벤트 이해하기</h2>
-        <h3>이벤트 리스너와 핸들러</h3>
+        <h3>이벤트</h3>
+        <h4>이벤트 리스너와 핸들러</h4>
         <ul>
             <li>리스너: 이벤트 발생 여부를 확인</li>
             <li>핸들러: 리스너와 연결된 함수</li>
         </ul>
-        <h3>이벤트 객체와 전파</h3>
+        <h4>이벤트 리스너 등록하기</h4>
+        <button class="load-code" data-file="../code/ex9-1.html">예제 9-1</button>
+        <button class="load-code" data-file="../code/ex9-2.html">예제 9-2</button>
+        <h3>이벤트 객체의 특성</h3>
+        <h4>이벤트 객체와 매개변수</h4>
+        <button class="load-code" data-file="../code/ex9-3.html">예제 9-3</button>
+        <h4>이벤트 전파</h4>
         <ul>
             <li>이벤트 전파 방향</li>
+            <ul>
+                <li>버블링: 자식 요소에서 부모 요소로 전파</li>
+                <li>캡처링: 부모 요소에서 자식 요소로 전파</li>
+            </ul>
             <li>전파 중지: <code>event.stopPropagation()</code></li>
         </ul>
+        <button class="load-code" data-file="../code/ex9-4.html">예제 9-4</button>
+        <button class="load-code" data-file="../code/ex9-5.html">예제 9-5</button>
         <h2>다양한 이벤트 사용하기</h2>
         <h3>마우스 이벤트</h3>
-        <ul>
-            <li>mousedown, mouseup</li>
-            <li>wheel 이벤트</li>
-        </ul>
+        <h4>mousedown, mouseup</h4>
+        <button class="load-code" data-file="../code/ex9-6.html">예제 9-6</button>
+        <h4>wheel 이벤트</h4>
+        <button class="load-code" data-file="../code/ex9-7.html">예제 9-7</button>
         <h3>윈도우 이벤트</h3>
-        <ul>
-            <li>로드: <code>window.onload</code></li>
-            <li>사이즈 변경: <code>resize</code></li>
-        </ul>
-        <h3>키보드 이벤트</h3>
-        <ul>
-            <li>keydown, keyup, keypress</li>
-        </ul>
+        <h4>load: <code>window.onload</code></h4>
+        <button class="load-code" data-file="../code/ex9-8.html">예제 9-8</button>
+        <h4>unload와 beforeunload 이벤트</h4>
+        <button class="load-code" data-file="../code/ex9-9.html">예제 9-9</button>
+        <h4><code>resize</code> 이벤트</h4>
+        <button class="load-code" data-file="../code/ex9-10.html">예제 9-10</button>
+        <h4><code>scroll</code> 이벤트</h4>
+        <button class="load-code" data-file="../code/ex9-11.html">예제 9-11</button>
         <h3>입력 이벤트</h3>
-        <ul>
-            <li>focus, blur</li>
-            <li>submit, reset</li>
-        </ul>
+        <h4>focus와 blur 이벤트</h4>
+        <button class="load-code" data-file="../code/ex9-12.html">예제 9-12</button>
+        <h4>submit과 reset 이벤트</h4>
+        <button class="load-code" data-file="../code/ex9-13.html">예제 9-13</button>
+        <h4>change 이벤트</h4>
+        <button class="load-code" data-file="../code/ex9-14.html">예제 9-14</button>
+        <h3>키보드 이벤트</h3>
+        <h4>키보드 좌우 화살표 키 이벤트</h4>
+        <button class="load-code" data-file="../code/ex9-15.html">예제 9-15</button>
     </div>
     <!-- 오른쪽: 실습 영역 -->
     <div class="practice-section">
